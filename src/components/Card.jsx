@@ -26,7 +26,7 @@ export default function Card ({ name, title, avatar, quote, opened }) {
       }
 	  </div>
 	  <div className={styles.cardOuter}>
-		  <input className={styles.cardCheckbox} type="checkbox" name="cc" onChange={onChange} defaultChecked={isOpened} checked={isOpened} />
+		  <input className={styles.cardCheckbox} type="checkbox" name="cc" onChange={onChange} checked={isOpened} />
 		  <div className={styles.cardExpansion}>
         <img className={styles.expansionIcon} src={isOpened ? iconClose.src : iconCross.src } alt="open/close icon" />
 		  </div>
