@@ -10,13 +10,13 @@ interface Props {
 const { links } = Astro.props;
 ---
 <header class="header">
-  <Image class="header__logo" src={logoSvg} alt="main site logo" />
+  <Image class="header__logo" src={logoSvg} alt="main site logo" loading="eager" />
   <nav class="header__nav">
     <ol class="nav__list">
       {links.map((link) => (<li class="nav__link"><a href={link.url}>{link.label}</a></li>))}
     </ol>
   </nav>
-  <Image class="header__navicon" src={hamburgerIconSvg} alt="mobile nav icon" />
+  <Image class="header__navicon" src={hamburgerIconSvg} alt="mobile nav icon" loading="eager" />
 </header>
 <style>
   .header {
