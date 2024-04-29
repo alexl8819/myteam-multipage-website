@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import logoSvg from '../assets/logo.svg';
+import hamburgerIconSvg from '../assets/icon-hamburger.svg';
+
+interface Props {
+	links: Array<object>;
+}
+
+const { links } = Astro.props;
+---
+<header class="header">
+  <Image class="header__logo" src={logoSvg} alt="main site logo" />
+  <nav class="header__nav">
+    <ol class="nav__list">
+      {links.map((link) => (<li class="nav__link"><a href={link.url}>{link.label}</a></li>))}
+    </ol>
+  </nav>
+  <Image class="header__navicon" src={hamburgerIconSvg} alt="mobile nav icon" />
+</header>
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  .header__logo {
+    width: 128px;
+    height: 32px;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__navicon {
+    width: 20px;
+    height: 17px;
+    cursor: pointer;
+  }
+  .nav__list {
+    list-style-type: none;
+  }
+  .nav__link {}
+  @media (width >= 640px) {
+    .header__nav {
+      display: block;
+    }
+    .header__navicon {
+      display: none;
+    }
+  }
+</style>

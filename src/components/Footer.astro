@@ -1,0 +1,118 @@
+---
+import { getImage, Image } from 'astro:assets';
+
+import siteLogo from '../assets/logo.svg';
+import contactUsBgSvg from '../assets/bg-pattern-home-6-about-5.svg';
+
+import facebookIcon from '../assets/icon-facebook.svg';
+import pinterestIcon from '../assets/icon-pinterest.svg';
+import twitterIcon from '../assets/icon-twitter.svg';
+
+interface Props {
+	links: Array<object>;
+}
+
+const { links } = Astro.props;
+
+const contactUsBgImg = await getImage({ src: contactUsBgSvg });
+---
+
+<footer>
+  <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
+    <h2 class="contact__heading">Ready to get started?</h2>
+
+    <button class="contact__button">contact us</button>
+  </section>
+  <section class="footer__bottom">
+    <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" />
+    
+    <nav class="bottom__nav">
+      <ol class="nav__list">
+        {links.map((link) => <li><a href={link.url}>{link.label}</a></li>)}
+      </ol>
+    </nav>
+
+    <p class="bottom__address">987  Hillcrest Lane</p>
+    <p class="bottom__address">Irvine, CA</p>
+    <p class="bottom__address">California 92714</p>
+    <p class="bottom__address">Call Us : 949-833-7432</p>
+    
+    <ol class="bottom__socials">
+      <li class="socials__icon">
+        <Image src={facebookIcon} alt="facebook icon in footer" />
+      </li>
+      <li class="socials__icon">
+        <Image src={pinterestIcon} alt="pinterest icon in footer" />
+      </li>
+      <li class="socials__icon">
+        <Image src={twitterIcon} alt="twitter icon in footer" />
+      </li>
+    </ol>
+
+    <p class="bottom__copyright">Copyright 2020. All Rights Reserve</p>
+</footer>
+<style>
+  .footer__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-color: var(--light-coral);
+    background-position: bottom -12% left;
+    padding: 46px 60px 86px;
+    color: var(--sacramento-state-green);
+  }
+  .footer__bottom {
+    background-color: var(--dark-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 40px 25px 0;
+  }
+  .contact__heading {
+    font-size: 2rem;
+    margin: 40px 0;
+  }
+  .contact__button {
+    font-weight: 600;
+    border: 2px solid var(--sacramento-state-green);
+    border-radius: 25px;
+    background-color: transparent;
+    width: 153px;
+    padding: 10px 0;
+  }
+  .bottom__logo {
+    width: 96px;
+    height: 24px;
+  }
+  .bottom__address {
+    text-align: justify;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .bottom__nav {
+    margin: 25px 0;
+  }
+  .bottom__socials {
+    margin: 20px 0;
+  }
+  .nav__list {
+    margin: 0;
+  }
+  .nav__list, .bottom__socials {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 104px;
+  }
+</style>

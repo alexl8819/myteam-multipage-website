@@ -1,0 +1,86 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.card__inner {
+  background-color: var(--sacramento-state-green);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 25px;
+  width: 100%;
+}
+.card__outer {
+  margin-top: -25px;
+}
+.card__name {
+  color: var(--rapture-blue);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.card__title {
+  font-style: italic;
+}
+.card__avatar {
+  border: 1px solid #C4FFFE;
+  border-radius: 999px;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 10px;
+}
+.card__text {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 25px;
+}
+.card__socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  padding: 20px 0;
+}
+.socials__icon {
+  width: 24px;
+  height: 20px;
+}
+.card__checkbox:checked + .card__expansion {
+  background-color: var(--rapture-blue);
+}
+.card__checkbox {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1;
+  outline: none;
+  background-color: transparent;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+.card__expansion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  width: 56px;
+  height: 56px;
+  margin-top: -65px;
+  background-color: var(--light-coral);
+  z-index: 0;
+}
+.expansion__icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(14%) hue-rotate(228deg) brightness(96%) contrast(103%);
+}

@@ -1,0 +1,71 @@
+---
+import { Image, getImage } from 'astro:assets';
+// Components
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.jsx';
+// Icons
+import iconPerson from '../assets/icon-person.svg';
+import iconCog from '../assets/icon-cog.svg';
+import iconChart from '../assets/icon-chart.svg';
+---
+
+<Layout title="Contact">
+	<main class="container">
+    <Header links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}, {label: 'contact us', url: '/contact'}]} />
+    
+    <section class="contact">
+      <h2 class="contact__heading">Contact</h2>
+
+      <h3 class="contact__subheading">Ask us about</h3>
+
+      <ol class="contact__featured">
+        <li class="featured__item">
+          <Image src={iconPerson} alt="contact featured person icon" />
+          <p>The quality of our talent network</p>
+        </li>
+        <li class="featured__item">
+          <Image src={iconCog} alt="contact featured cog icon" />
+          <p>Usage & implementation of our software</p>
+        </li>
+        <li class="featured__item">
+          <Image src={iconChart} alt="contact featured chart icon" />
+          <p>How we help drive innovation</p>
+        </li>
+      </ol>
+
+      <ContactForm client:visible />
+      
+    <Footer links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}]} />
+	</main>
+</Layout>
+
+<style>
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+  }
+  .contact__heading, .contact__subheading {
+    font-weight: 700;
+  }
+  .contact__heading {
+    font-size: 2.5rem;
+  }
+  .contact__subheading {
+    font-size: 2rem;
+    color: var(--light-coral);
+    margin: 15px 0;
+  }
+  .contact__featured {
+    list-style-type: none;
+  }
+  .featured__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+</style>

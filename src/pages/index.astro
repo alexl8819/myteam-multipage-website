@@ -1,0 +1,181 @@
+---
+import { getImage, Image } from 'astro:assets';
+// Components
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Review from '../components/Review.astro';
+// Background images
+import firstSectionBgImg from '../assets/bg-pattern-home-2.svg';
+import secondSectionBgImg from '../assets/bg-pattern-home-3.svg';
+import thirdSectionTopBgImg from '../assets/bg-pattern-home-4-about-3.svg';
+import thirdSectionBottomBgImg from '../assets/bg-pattern-home-5.svg';
+// Icons
+import iconPerson from '../assets/icon-person.svg';
+import iconCog from '../assets/icon-cog.svg';
+import iconChart from '../assets/icon-chart.svg';
+//
+const homeIntroBgImg = await getImage({ src: firstSectionBgImg });
+const highlightsBgImg = await getImage({ src: secondSectionBgImg });
+const reviewsTopBgImg = await getImage({ src: thirdSectionTopBgImg });
+const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg });
+---
+
+<Layout title="Homepage">
+	<main class="container">
+    <Header links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}, {label: 'contact us', url: '/contact'}]} />
+
+		<section class="home__intro" style={`background-image: url(${homeIntroBgImg.src})`}>
+			<h2 class="intro__heading">Find the best <span class="intro__heading--highlighted">talent</span></h2>
+			<p class="intro__text">Finding the right people and building high performing teams can be hard. Most companies aren’t tapping into the abundance of global talent. We’re about to change that.</p>
+		</section>
+    
+    <section class="home__highlights" style={`background-image: url(${highlightsBgImg.src})`}>
+      <div class="highlights__wrapper">
+        <div class="highlights__border"></div>
+        <h2 class="highlights__heading">Build & manage distributed teams like no one else.</h2>
+      </div>
+  
+			<div class="highlights__highlight">
+				<Image class="highlight__icon" src={iconPerson} alt="highlight person icon" />
+				<h3 class="highlight__heading highlight__heading--bolded">Experienced Individuals</h3>
+      	<p class="highlight__text">Our network is made up of highly experienced professionals who are passionate about what they do.</p>
+			</div>
+
+      <div class="highlights__highlight">
+        <Image class="highlight__icon" src={iconCog} alt="highlight cog icon" />
+        <h3 class="highlight__heading highlight__heading--bolded">Easy to Implement</h3>
+        <p class="highlight__text">Our processes have been refined over years of implementation meaning our teams always deliver.</p>
+      </div>
+      
+      <div class="highlights__highlight">
+        <Image class="highlight__icon" src={iconChart} alt="highlight chart icon" />
+        <h3 class="highlight__heading highlight__heading--bolded">Enhanced Productivity</h3>
+        <p class="highlight__text">Our customized platform with in-built analytics helps you manage your distributed teams.</p>
+      </div>
+    </section>
+
+    <section class="home__reviews" style={`background-image: url(${reviewsTopBgImg.src})`}>
+      <div class="reviews__wrapper" style={`background-image: url(${reviewsBottomBgImg.src})`}>
+        <h2 class="reviews__heading">Delivering real results for top companies. Some of our <span class="reviews__heading--highlighted">success stories.</span></h2>
+        
+        <Review
+          author="Kady Baker" 
+          title="Product Manager at Bookmark" 
+          avatar="kady"  
+          text="The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned."
+        />
+        
+        <Review
+          author="Aiysha Reese"
+          title="Founder of Manage"
+          avatar="aiysha"
+          text="We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!"
+        />
+        
+        <Review
+          author="Arthur Clarke"
+          title="Co-founder of MyPhysio"
+          avatar="arthur"
+          text="Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month."
+        />
+      </div>
+    </section>
+
+    <Footer links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}]} />
+	</main>
+</Layout>
+
+<style>
+  .home__intro {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: var(--white);
+    text-align: center;
+		padding: 0 20px 150px;
+  }
+  .intro__text {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.5625rem;
+  }
+  .intro__heading, .highlights__heading, .reviews__heading {
+		color: var(--white);
+    font-weight: 700;
+  }
+  .intro__heading {
+		font-size: 2.5rem;
+    padding: 0 25px;
+    margin: 40px 0;
+  }
+  .highlights__wrapper {
+    padding: 65px 110px 40px 30px;
+  }
+  .highlights__border {
+    width: 50px;
+    height: 4px;
+    background-color: var(--light-coral);
+  }
+  .highlights__heading, .reviews__heading {
+    font-size: 2rem;
+  }
+  .highlights__heading {
+    margin: 40px 0;
+    text-align: left;
+  }
+  .intro__heading--highlighted {
+    color: var(--light-coral);
+  }
+  .home__highlights {
+		background-color: var(--sacramento-state-green);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: top right -50%;
+    padding-bottom: 25px;
+  }
+  .highlights__highlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 25px;
+  }
+  .highlights__highlight:not(:first-child), .highlights__highlight:not(:last-child) {
+    margin: 20px 0;
+  }
+  .highlight__icon {
+    margin-bottom: 10px;
+  }
+  .highlight__heading {
+    font-size: 1.125rem;
+    color: var(--light-coral);
+    margin: 0;
+  }
+  .highlight__heading--bolded {
+    font-weight: 700;
+  }
+  .highlight__text {
+    font-size: 0.9375rem;
+    line-height: 25px;
+    color: var(--white);
+  }
+  .home__reviews {
+    background-color: var(--deep-jungle-green);
+    background-repeat: no-repeat;
+    margin: -26px 0;
+  }
+  .reviews__wrapper {
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    padding-bottom: 50px;
+  }
+  .reviews__heading {
+    text-align: center;
+    padding: 120px 25px 0;
+  }
+  .reviews__heading--highlighted {
+    color: var(--rapture-blue);
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+
+import iconQuotes from '../assets/icon-quotes.svg';
+
+interface Props {
+	author: string;
+	title: string;
+  avatar: string;
+	text: string;
+}
+
+const { author, title, avatar, text } = Astro.props;
+
+const images = import.meta.glob('../assets/avatar-*.jpg');
+const avatarSrc = images[`../assets/avatar-${avatar}.jpg`]();
+---
+
+<blockquote class="review">
+  <Image class="review__icon" src={iconQuotes} alt="review quotes icon" />
+  <p class="review__text">“{text}”</p>
+  <footer class="review__footer">
+    <p class="review__author">{author}</p>
+    <p class="review__title">{title}</p>
+    <Image class="review__avatar" src={avatarSrc} alt={`${author}s avatar`} />
+  </footer>
+</blockquote>
+<style>
+  .review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    margin: 25px;
+  }
+  .review__icon {
+    z-index: 0;
+  }
+  .review__text {
+    margin-top: -20px;
+    z-index: 1;
+    font-size: 0.938rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 25px;
+  }
+  .review__author {
+    color: var(--rapture-blue);
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  .review__avatar {
+    width: 62px;
+    height: 62px;
+    border-radius: 999px;
+    border: 1px solid var(--rapture-blue);
+  }
+  .review__title {
+    font-size: 0.813rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 8px 0 15px;
+  }
+  .review__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+</style>

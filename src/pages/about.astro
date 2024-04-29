@@ -1,0 +1,173 @@
+---
+import { Image, getImage } from 'astro:assets';
+
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Card from '../components/Card.jsx';
+// Backgrounds
+import firstSectionBg from '../assets/bg-pattern-about-1-mobile-nav-1.svg';
+import secondSectionTopBg from '../assets/bg-pattern-about-2-contact-1.svg';
+import secondSectionBottomBg from '../assets/bg-pattern-home-4-about-3.svg';
+import thirdSectionBg from '../assets/bg-pattern-about-4.svg';
+// Client brands
+import theVergeLogo from '../assets/logo-the-verge.png';
+import theJakartaPostLogo from '../assets/logo-jakarta-post.png';
+import theGuardianLogo from '../assets/logo-the-guardian.png';
+import techRadarLogo from '../assets/logo-tech-radar.png';
+import gadgetsNowLogo from '../assets/logo-gadgets-now.png';
+// Avatars
+import nikita from '../assets/avatar-nikita.jpg';
+import cristian from '../assets/avatar-christian.jpg';
+import cruz from '../assets/avatar-cruz.jpg';
+import drake from '../assets/avatar-drake.jpg';
+import griffin from '../assets/avatar-griffin.jpg';
+import aden from '../assets/avatar-aden.jpg';
+// 
+const aboutIntroBgImg = await getImage({ src: firstSectionBg });
+const aboutDirectorsTopBgImg = await getImage({ src: secondSectionTopBg });
+const aboutDirectorsBottomBgImg = await getImage({ src: secondSectionBottomBg });
+const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg });
+---
+
+<Layout title="About">
+	<main class="container">
+    <Header links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}, {label: 'contact us', url: '/contact'}]} />
+    
+    <section class="about__intro" style={`background-image: url(${aboutIntroBgImg.src})`}>
+      <h2 class="intro__heading">About</h2>
+
+      <p class="intro__text">We help companies build dynamic teams made up of top global talent. 
+      Using our network of passionate professionals we drive innovation 
+      and deliver incredible outcomes. Talented, diverse teams shape the 
+      best products and experiences. We’ll bring those teams to you.</p>
+    </section>
+
+    <section class="about__directors" style={`background-image: url(${aboutDirectorsTopBgImg.src})`}>
+      <div class="directors__wrapper" style={`background-image: url(${aboutDirectorsBottomBgImg.src})`}>
+        <h2 class="directors__heading">Meet the directors</h2>
+        
+        <Card 
+          client:visible
+          name="Nikita Marks"
+          title="Founder & CEO"
+          avatar={nikita}
+          quote="“It always amazes me how much talent there is in every corner of the globe.”"
+        />
+
+        <Card
+          client:visible
+          name="Cristian Duncan"
+          title="Co-founder & COO"
+          avatar={cristian}
+          quote="“Distributed teams required unique processes. You need to approach work in a new way.”"
+        />
+
+        <Card
+          client:visible
+          name="Cruz Hamer"
+          title="Co-founder & CTO"
+          avatar={cruz}
+          quote="“Technology is at the forefront of enabling distributed teams. That's where we come in.”"
+        />
+
+        <Card
+          client:visible
+          name="Drake Heaton"
+          title="Business Development Lead"
+          avatar={drake}
+          quote="“Hiring similar people from similar backgrounds is a surefire way to stunt innovation.”"
+        />
+
+        <Card
+          client:visible
+          name="Griffin Wise"
+          title="Lead Marketing"
+          avatar={griffin}
+          quote="“Unique perspectives shape unique products, which is what you need to survive these days.”"
+        />
+
+        <Card
+          client:visible
+          name="Aden Allan"
+          title="Head of Talent"
+          avatar={aden}
+          quote="“Empowered teams create truly amazing products. Set the north star and let them follow it.”"
+          opened
+        />
+      </div>
+    </section>
+
+    <section class="about__featured" style={`background-image: url(${aboutFeaturedBgImg.src})`}>
+      <h2 class="featured__heading">Some of our clients</h2>
+
+      <Image class="featured__logo" src={theVergeLogo} alt="the verge's logo" />
+
+      <Image class="featured__logo" src={theJakartaPostLogo} alt="the jakarta post's logo" />
+
+      <Image class="featured__logo" src={theGuardianLogo} alt="the guardian's logo" />
+
+      <Image class="featured__logo" src={techRadarLogo} alt="tech radar's logo" />
+
+      <Image class="featured__logo" src={gadgetsNowLogo} alt="gadgets now's logo" />
+    </section>
+
+    <Footer links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}]} />
+	</main>
+</Layout>
+
+<style>
+  .about__intro, .about__directors, .directors__wrapper, .about__featured {
+    background-repeat: no-repeat;
+  }
+  .about__intro, .about__directors, .about__featured {
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about__intro {
+    background-position: bottom -50% right -58%;
+    padding: 10px 30px 110px;
+  }
+  .intro__heading {
+    font-size: 2.5rem;
+    margin: 40px 0;
+  }
+  .intro__text {
+    font-size: 0.9375rem;
+    line-height: 25px;
+  }
+  .about__directors {
+    background-color: var(--deep-jungle-green);
+    background-position: top -6% left -60%;
+  }
+  .directors__wrapper {
+    background-position: bottom right;
+    padding: 70px 25px;
+  }
+  .directors__heading, .featured__heading {
+    font-size: 2rem;
+    margin: 40px 0;
+  }
+  .about__featured {
+    background-color: var(--sacramento-state-green);
+    background-position: top -30% left -60%;
+    padding: 40px 0;
+  }
+  .featured__heading {
+    font-weight: 700;
+    margin: 40px 0;
+  }
+  .featured__logo {
+    width: 147px;
+    height: 24px;
+    margin: 20px 0;
+  }
+  .featured__logo:last-child {
+    width: 87px;
+    height: 40px;
+  }
+</style>
