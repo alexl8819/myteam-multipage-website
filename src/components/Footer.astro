@@ -17,7 +17,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg });
   <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
     <h2 class="contact__heading">Ready to get started?</h2>
 
-    <button class="contact__button">contact us</button>
+    <a href="/contact" class="contact__button">contact us</a>
   </section>
   <section class="footer__bottom">
     <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" />
@@ -84,7 +84,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg });
     border-radius: 25px;
     background-color: transparent;
     width: 153px;
-    padding: 10px 0;
+    padding: 12px 0;
     cursor: pointer;
   }
   .contact__button:hover {
