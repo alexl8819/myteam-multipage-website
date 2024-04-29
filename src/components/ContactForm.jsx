@@ -5,23 +5,23 @@ export default function ContactForm ({}) {
   return (
     <form className={styles.contactForm} name="contact" onSubmit={onSubmit} noValidate>
       <div className={styles.formGroup}>
-        <label className={styles.groupLabelHidden} htmlFor="fullname">Name</label>
+        <label className={styles.groupLabel} htmlFor="fullname">Name</label>
         <input className={styles.groupTextinput} type="text" id="fullname" name="fullname" placeholder="Name" />
       </div>
       <div className={styles.formGroup}>
-        <label className={styles.groupLabelHidden} htmlFor="emailaddress">Email Address</label>
+        <label className={styles.groupLabel} htmlFor="emailaddress">Email Address</label>
         <input className={styles.groupTextinput} type="email" id="emailaddress" name="emailaddress" placeholder="Email Address" />
       </div>
       <div className={styles.formGroup}>
-        <label className={styles.groupLabelHidden} htmlFor="companyname">Company Name</label>
+        <label className={styles.groupLabel} htmlFor="companyname">Company Name</label>
         <input className={styles.groupTextinput} type="text" id="companyname" name="companyname" placeholder="Company Name" />
       </div>
       <div className={styles.formGroup}>
-        <label className={styles.groupLabelHidden} htmlFor="title">Title</label>
+        <label className={styles.groupLabel} htmlFor="title">Title</label>
         <input className={styles.groupTextinput} type="text" id="title" name="title" placeholder="Title" />
       </div>
       <div className={styles.formGroup}>
-        <label className={styles.groupLabelHidden} htmlFor="message">Message</label>
+        <label className={styles.groupLabel} htmlFor="message">Message</label>
         <textarea className={styles.groupTextarea} placeholder="Message"></textarea>
       </div>
 
