@@ -9,29 +9,36 @@ import ContactForm from '../components/ContactForm.jsx';
 import iconPerson from '../assets/icon-person.svg';
 import iconCog from '../assets/icon-cog.svg';
 import iconChart from '../assets/icon-chart.svg';
+// Bg
+import firstBgImg from '../assets/bg-pattern-contact-2.svg';
+
+const contactBottomBgImg = await getImage({ src: firstBgImg });
 ---
 
 <Layout title="Contact">
 	<main class="container">
     <Header links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}, {label: 'contact us', url: '/contact'}]} />
     
-    <section class="contact">
+    <section class="contact" style={`background-image: url(${contactBottomBgImg.src})`}>
       <h2 class="contact__heading">Contact</h2>
 
       <h3 class="contact__subheading">Ask us about</h3>
 
       <ol class="contact__featured">
         <li class="featured__item">
-          <Image src={iconPerson} alt="contact featured person icon" />
-          <p>The quality of our talent network</p>
+          <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
+
+          <p class="item__text">The quality of our talent network</p>
         </li>
         <li class="featured__item">
-          <Image src={iconCog} alt="contact featured cog icon" />
-          <p>Usage & implementation of our software</p>
+          <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
+
+          <p class="item__text">Usage & implementation of our software</p>
         </li>
         <li class="featured__item">
-          <Image src={iconChart} alt="contact featured chart icon" />
-          <p>How we help drive innovation</p>
+          <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
+
+          <p class="item__text">How we help drive innovation</p>
         </li>
       </ol>
 
@@ -44,12 +51,14 @@ import iconChart from '../assets/icon-chart.svg';
 
 <style>
   .contact {
+    background-repeat: no-repeat;
+    background-position: bottom -15% right -60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--white);
-    padding: 40px 0;
+    padding: 40px 25px;
   }
   .contact__heading, .contact__subheading {
     font-weight: 700;
@@ -64,10 +73,26 @@ import iconChart from '../assets/icon-chart.svg';
   }
   .contact__featured {
     list-style-type: none;
+    margin: 15px 0;
   }
   .featured__item {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 15px 0;
+  }
+  .item__icon {
+    width: 72px;
+    height: 72px;
+  }
+  .item__text {
+    text-align: left;
+    font-size: 1.125rem;
+    line-height: 28px;
+    font-weight: 700;
+    padding-left: 15px;
+  }
+  .featured__item:first-child > .item__text { /* TODO: temp fix */
+    padding-left: 20px;
   }
 </style>
