@@ -13,7 +13,7 @@ const { links } = Astro.props;
 const contactUsBgImg = await getImage({ src: contactUsBgSvg });
 ---
 
-<footer>
+<footer class="footer">
   <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
     <h2 class="contact__heading">Ready to get started?</h2>
 
@@ -46,6 +46,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg });
     </ol>
 
     <p class="bottom__copyright">Copyright 2020. All Rights Reserve</p>
+  </section>
 </footer>
 <style>
   .footer__contact {
@@ -71,7 +72,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg });
     color: var(--white);
     font-size: 0.9375rem;
     font-weight: 600;
-    padding: 40px 25px 0;
+    padding: 40px 25px 20px;
   }
   .contact__heading {
     font-size: 2rem;
@@ -84,6 +85,14 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg });
     background-color: transparent;
     width: 153px;
     padding: 10px 0;
+    cursor: pointer;
+  }
+  .contact__button:hover {
+    background-color: var(--white);
+    border: 2px solid var(--white);
+  }
+  .contact__button:disabled {
+    opacity: 0.5;
   }
   .bottom__logo {
     width: 96px;
@@ -99,9 +108,6 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg });
   }
   .bottom__socials {
     margin: 20px 0;
-  }
-  .nav__list {
-    margin: 0;
   }
   .nav__list, .bottom__socials {
     list-style-type: none;
