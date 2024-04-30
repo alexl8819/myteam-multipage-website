@@ -39,7 +39,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px;
+    padding: 40px 25px;
     z-index: 0;
   }
   .header__logo {
@@ -91,7 +91,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     display: flex;
     flex-direction: row;
     align-self: flex-end;
-    margin-top: 5px;
+    margin-top: 20px;
   }
   .navtarget__toggle:checked ~ .sidebar__opacity {
     background-color: rgba(0, 0, 0, 0.6);
@@ -123,9 +123,29 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     padding: 10px 20px 15px;
     text-align: center;
   }
-  @media (width >= 640px) {
+  @media screen and (min-width: 768px) {
+    .header {
+      padding: 60px 40px;
+    }
     .header__nav {
       display: block;
+      width: 100%;
+    }
+    .nav__list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 25px;
+    }
+    .nav__link {
+      margin: 0 25px;
+    }
+    .nav__list > .nav__link:last-child {
+      margin-left: auto;
+      padding: 10px 20px;
+      border: 2px solid var(--white);
+      border-radius: 30px;
+      cursor: pointer;
     }
     .header__navtarget {
       display: none;
