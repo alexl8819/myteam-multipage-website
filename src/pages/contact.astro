@@ -72,7 +72,6 @@ const contactBottomBgImg = await getImage({ src: firstBgImg });
     margin: 15px 0;
   }
   .contact__featured {
-    list-style-type: none;
     margin: 15px 0;
   }
   .featured__item {
@@ -92,7 +91,7 @@ const contactBottomBgImg = await getImage({ src: firstBgImg });
     font-weight: 700;
     padding-left: 15px;
   }
-  .featured__item:first-child > .item__text { /* TODO: temp fix */
+  .featured__item:first-child > .item__text { /* TODO: temp fix, also should not be necessary */
     padding-left: 20px;
   }
 </style>
