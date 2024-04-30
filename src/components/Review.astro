@@ -3,13 +3,6 @@ import { Image } from 'astro:assets';
 
 import iconQuotes from '../assets/icon-quotes.svg';
 
-interface Props {
-	author: string;
-	title: string;
-  avatar: string;
-	text: string;
-}
-
 const { author, title, avatar, text } = Astro.props;
 
 const images = import.meta.glob('../assets/avatar-*.jpg');
