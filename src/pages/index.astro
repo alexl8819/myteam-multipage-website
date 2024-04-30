@@ -36,29 +36,40 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg });
         <h2 class="highlights__heading">Build & manage distributed teams like no one else.</h2>
       </div>
   
-			<div class="highlights__highlight">
-				<Image class="highlight__icon" src={iconPerson} alt="highlight person icon" />
-				<h3 class="highlight__heading highlight__heading--bolded">Experienced Individuals</h3>
-      	<p class="highlight__text">Our network is made up of highly experienced professionals who are passionate about what they do.</p>
-			</div>
+			<ul class="highlights__container">
+        <li class="highlights__highlight">
+				  <Image class="highlight__icon" src={iconPerson} alt="highlight person icon" loading="eager" />
 
-      <div class="highlights__highlight">
-        <Image class="highlight__icon" src={iconCog} alt="highlight cog icon" />
-        <h3 class="highlight__heading highlight__heading--bolded">Easy to Implement</h3>
-        <p class="highlight__text">Our processes have been refined over years of implementation meaning our teams always deliver.</p>
-      </div>
+				  <div class="highlight__container">
+            <h3 class="highlight__heading highlight__heading--bolded">Experienced Individuals</h3>
+      	    <p class="highlight__text">Our network is made up of highly experienced professionals who are passionate about what they do.</p>
+          </div>
+        </li>
+
+        <li class="highlights__highlight">
+          <Image class="highlight__icon" src={iconCog} alt="highlight cog icon" loading="lazy" />
+
+          <div class="highlight__container">
+            <h3 class="highlight__heading highlight__heading--bolded">Easy to Implement</h3>
+            <p class="highlight__text">Our processes have been refined over years of implementation meaning our teams always deliver.</p>
+          </div>
+        </li>
       
-      <div class="highlights__highlight">
-        <Image class="highlight__icon" src={iconChart} alt="highlight chart icon" />
-        <h3 class="highlight__heading highlight__heading--bolded">Enhanced Productivity</h3>
-        <p class="highlight__text">Our customized platform with in-built analytics helps you manage your distributed teams.</p>
-      </div>
+        <li class="highlights__highlight">
+          <Image class="highlight__icon" src={iconChart} alt="highlight chart icon" loading="lazy" />
+
+          <div class="highlight__container">
+            <h3 class="highlight__heading highlight__heading--bolded">Enhanced Productivity</h3>
+            <p class="highlight__text">Our customized platform with in-built analytics helps you manage your distributed teams.</p>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section class="home__reviews" style={`background-image: url(${reviewsTopBgImg.src})`}>
       <div class="reviews__wrapper" style={`background-image: url(${reviewsBottomBgImg.src})`}>
         <h2 class="reviews__heading">Delivering real results for top companies. Some of our <span class="reviews__heading--highlighted">success stories.</span></h2>
-        
+        <!-- TODO: wrap reviews in list -->
         <Review
           author="Kady Baker" 
           title="Product Manager at Bookmark" 
@@ -121,7 +132,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg });
     font-size: 2rem;
   }
   .highlights__heading {
-    margin: 40px 0;
+    margin: 40px 0 0;
     text-align: left;
   }
   .intro__heading--highlighted {
@@ -132,7 +143,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg });
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: top right -50%;
-    padding-bottom: 25px;
+    padding-bottom: 60px;
   }
   .highlights__highlight {
     display: flex;
@@ -143,39 +154,81 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg });
     padding: 0 25px;
   }
   .highlights__highlight:not(:first-child), .highlights__highlight:not(:last-child) {
-    margin: 20px 0;
+    margin: 40px 0;
   }
   .highlight__icon {
+    width: 72px;
+    height: 72px;
     margin-bottom: 10px;
   }
   .highlight__heading {
     font-size: 1.125rem;
     color: var(--light-coral);
-    margin: 0;
+    margin-bottom: 20px;
   }
   .highlight__heading--bolded {
     font-weight: 700;
   }
   .highlight__text {
     font-size: 0.9375rem;
+    font-weight: 600;
     line-height: 25px;
     color: var(--white);
   }
   .home__reviews {
     background-color: var(--deep-jungle-green);
     background-repeat: no-repeat;
+    padding: 110px 0 0;
     margin: -26px 0;
   }
   .reviews__wrapper {
     background-repeat: no-repeat;
     background-position: bottom right;
-    padding-bottom: 50px;
+    padding: 20px 20px 120px;
   }
   .reviews__heading {
     text-align: center;
-    padding: 120px 25px 0;
   }
   .reviews__heading--highlighted {
     color: var(--rapture-blue);
+  }
+  @media screen and (min-width: 768px) {
+    .home__intro {
+      background-size: 45%;
+      padding: 0 170px 250px;
+    }
+    .intro__heading {
+      font-size: 4rem;
+      padding: 0 40px;
+    }
+    .home__highlights {
+      background-size: 25%;
+      background-position: top right -18%;
+      padding-bottom: 75px;
+    }
+    .highlights__wrapper {
+      padding: 120px 200px 20px 80px;
+    }
+    .highlights__highlight {
+      flex-direction: row;
+      text-align: left;
+      padding: 20px 95px;
+    }
+    .highlights__highlight:first-child { /* fix: additional padding should not be necessary */
+      padding-left: 100px;
+    }
+    .highlight__container {
+      padding: 0 25px;
+    }
+    .highlight__heading {
+      margin-bottom: 20px;
+    }
+    .highlight__icon {
+      margin-bottom: 0;
+    }
+    .reviews__wrapper {
+      background-position: bottom 2.5% right;
+      padding: 0 170px 80px;
+    }
   }
 </style>
