@@ -10,39 +10,44 @@ import iconPerson from '../assets/icon-person.svg';
 import iconCog from '../assets/icon-cog.svg';
 import iconChart from '../assets/icon-chart.svg';
 // Bg
-import firstBgImg from '../assets/bg-pattern-contact-2.svg';
+import bottomBgImg from '../assets/bg-pattern-contact-2.svg';
 
-const contactBottomBgImg = await getImage({ src: firstBgImg });
+const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
+
 ---
 
 <Layout title="Contact">
 	<main class="container">
     <Header links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}, {label: 'contact us', url: '/contact'}]} />
     
-    <section class="contact" style={`background-image: url(${contactBottomBgImg.src})`}>
-      <h2 class="contact__heading">Contact</h2>
-
-      <h3 class="contact__subheading">Ask us about</h3>
-
-      <ol class="contact__featured">
-        <li class="featured__item">
-          <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
-
-          <p class="item__text">The quality of our talent network</p>
-        </li>
-        <li class="featured__item">
-          <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
-
-          <p class="item__text">Usage & implementation of our software</p>
-        </li>
-        <li class="featured__item">
-          <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
-
-          <p class="item__text">How we help drive innovation</p>
-        </li>
-      </ol>
-
-      <ContactForm client:visible />
+    <section class="contact">
+      <div class="contact__wrapper" style={`background-image: url(${contactBottomBg.src})`}>
+        <h2 class="contact__heading">Contact</h2>
+  
+        <h3 class="contact__subheading">Ask us about</h3>
+  
+        <ol class="contact__featured">
+          <li class="featured__item">
+            <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
+  
+            <p class="item__text">The quality of our talent network</p>
+          </li>
+          <li class="featured__item">
+            <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
+  
+            <p class="item__text">Usage & implementation of our software</p>
+          </li>
+          <li class="featured__item">
+            <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
+  
+            <p class="item__text">How we help drive innovation</p>
+          </li>
+        </ol>
+  
+        <div class="contact__formcontainer">
+          <ContactForm client:visible />
+        </div>
+      </div>
     </section>
       
     <Footer links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}]} />
@@ -50,14 +55,18 @@ const contactBottomBgImg = await getImage({ src: firstBgImg });
 </Layout>
 
 <style>
-  .contact {
+  .contact, .contact__wrapper {
     background-repeat: no-repeat;
-    background-position: bottom -15% right -60%;
+  }
+  .contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    text-align: center;
     color: var(--white);
+  }
+  .contact__wrapper {
+    background-position: bottom -13% right -60%;
     padding: 40px 25px;
   }
   .contact__heading, .contact__subheading {
@@ -72,13 +81,18 @@ const contactBottomBgImg = await getImage({ src: firstBgImg });
     margin: 15px 0;
   }
   .contact__featured {
-    margin: 15px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 25px 0;
   }
   .featured__item {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 15px 0;
+    margin: 10px 0;
   }
   .item__icon {
     width: 72px;
@@ -93,5 +107,26 @@ const contactBottomBgImg = await getImage({ src: firstBgImg });
   }
   .featured__item:first-child > .item__text { /* TODO: temp fix, also should not be necessary */
     padding-left: 20px;
+  }
+  .contact__formcontainer {
+    width: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    .contact {
+      background-image: url('../assets/bg-pattern-about-2-contact-1.svg');
+      background-position: top 3% left -18%;
+      background-repeat: no-repeat;
+      margin-top: 20px;
+    }
+    .contact__wrapper {
+      background-position: bottom right -17%;
+      padding: 40px 125px 60px;
+    }
+    .contact__heading {
+      font-size: 4rem;
+    }
+    .featured__item:first-child > .item__text { /* TODO: temp fix, also should not be necessary */
+      padding-left: 15px;
+    }
   }
 </style>
