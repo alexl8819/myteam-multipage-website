@@ -15,10 +15,10 @@ import iconPerson from '../assets/icon-person.svg';
 import iconCog from '../assets/icon-cog.svg';
 import iconChart from '../assets/icon-chart.svg';
 //
-const homeIntroBgImg = await getImage({ src: firstSectionBgImg });
-const highlightsBgImg = await getImage({ src: secondSectionBgImg });
-const reviewsTopBgImg = await getImage({ src: thirdSectionTopBgImg });
-const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg });
+const homeIntroBgImg = await getImage({ src: firstSectionBgImg, format: 'webp' });
+const highlightsBgImg = await getImage({ src: secondSectionBgImg, format: 'webp' });
+const reviewsTopBgImg = await getImage({ src: thirdSectionTopBgImg, format: 'webp' });
+const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format: 'webp' });
 ---
 
 <Layout title="Homepage">
@@ -93,7 +93,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg });
       </div>
     </section>
 
-    <Footer links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}]} />
+    <Footer links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}]} includeContact />
 	</main>
 </Layout>
 
