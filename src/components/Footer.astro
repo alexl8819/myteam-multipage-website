@@ -8,17 +8,20 @@ import facebookIcon from '../assets/icon-facebook.svg';
 import pinterestIcon from '../assets/icon-pinterest.svg';
 import twitterIcon from '../assets/icon-twitter.svg';
 
-const { links } = Astro.props;
+const { links, includeContact } = Astro.props;
 
-const contactUsBgImg = await getImage({ src: contactUsBgSvg });
+const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
+
 ---
 
 <footer class="footer">
-  <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
-    <h2 class="contact__heading">Ready to get started?</h2>
+  { includeContact ? 
+    <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
+      <h2 class="contact__heading">Ready to get started?</h2>
 
-    <a href="/contact" class="contact__button">contact us</a>
-  </section>
+      <a href="/contact" class="contact__button">contact us</a>
+    </section> : null
+  }
   <section class="footer__bottom">
     <div>
       <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" />
