@@ -1,6 +1,6 @@
 import styles from './ContactForm.module.css';
 
-export default function ContactForm ({}) {
+export default function ContactForm () {
   const onSubmit = (e) => e.preventDefault();
   return (
     <form className={styles.contactForm} name="contact" onSubmit={onSubmit} noValidate>
