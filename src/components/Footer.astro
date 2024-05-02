@@ -12,9 +12,6 @@ const { links, includeContact } = Astro.props;
 
 const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
 
-const isDev = import.meta.env.DEV;
-const baseUrl = import.meta.env.BASE_URL;
-
 ---
 
 <footer class="footer">
@@ -31,7 +28,7 @@ const baseUrl = import.meta.env.BASE_URL;
     
       <nav class="bottom__nav">
         <ol class="nav__list">
-          {links.map(({url, label}) => <li><a href={isDev ? url : baseUrl + url}>{label}</a></li>)}
+          {links.map(({url, label}) => <li><a href={url}>{label}</a></li>)}
         </ol>
       </nav>
     </div>
