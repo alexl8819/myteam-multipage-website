@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro build --site https://alexl8819.github.io --base /myteam-multipage-website",
+    "build": "astro build --site https://alexl8819.github.io --base myteam-multipage-website",
     "preview": "astro preview",
     "astro": "astro",
     "lint:js": "eslint ./src/**/**.astro --max-warnings=0"
