@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro build --base=/myteam-multipage-website/",
+    "build": "astro build --base myteam-multipage-website",
     "preview": "astro preview",
     "astro": "astro",
     "lint:js": "eslint ./src/**/**.astro --max-warnings=0"

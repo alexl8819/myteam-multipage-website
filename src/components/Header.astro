@@ -8,6 +8,7 @@ import closeIcon from '../assets/icon-close.svg';
 import sidebarBgImg from '../assets/bg-pattern-about-1-mobile-nav-1.svg';
 
 const { links } = Astro.props;
+const baseURL = import.meta.env.BASE_URL;
 
 const sidebarBottomBg = await getImage({ src: sidebarBgImg });
 
@@ -17,7 +18,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
 
   <nav class="header__nav">
     <ol class="nav__list">
-      {links.map(({url, label}) => (<li class="nav__link"><a href={url}>{label}</a></li>))}
+      {links.map(({url, label}) => (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>))}
     </ol>
   </nav>
 
@@ -28,7 +29,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
       <Image class="sidebar__icon" src={closeIcon} alt="mobile nav icon" loading="lazy" />
       <nav class="sidebar__nav">
         <ol class="nav__list">
-          {links.map(({url, label}) => (<li class="nav__link"><a href={url}>{label}</a></li>))}
+          {links.map(({url, label}) => (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>))}
         </ol>
       </nav>
     </div>

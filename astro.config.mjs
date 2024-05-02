@@ -12,5 +12,6 @@ export default defineConfig({
         localsConvention: 'camelCaseOnly'
       }
     }
-  }
+  },
+  trailingSlash: 'never'
 });

@@ -9,6 +9,7 @@ import pinterestIcon from '../assets/icon-pinterest.svg';
 import twitterIcon from '../assets/icon-twitter.svg';
 
 const { links, includeContact } = Astro.props;
+const baseURL = import.meta.env.BASE_URL;
 
 const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
 
@@ -19,7 +20,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
       <h2 class="contact__heading">Ready to get started?</h2>
 
-      <a href="/contact" class="contact__button">contact us</a>
+      <a href={`${baseURL}contact`} class="contact__button">contact us</a>
     </section> : null
   }
   <section class="footer__bottom">
@@ -28,7 +29,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     
       <nav class="bottom__nav">
         <ol class="nav__list">
-          {links.map(({url, label}) => <li><a href={url}>{label}</a></li>)}
+          {links.map(({url, label}) => <li><a href={`${baseURL}${url}`}>{label}</a></li>)}
         </ol>
       </nav>
     </div>

@@ -18,7 +18,7 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
 
 <Layout title="Contact">
 	<main class="container">
-    <Header links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}, {label: 'contact us', url: '/contact'}]} />
+    <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
     
     <section class="contact">
       <div class="contact__wrapper" style={`background-image: url(${contactBottomBg.src})`}>
@@ -50,7 +50,7 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
       </div>
     </section>
       
-    <Footer links={[{label: 'home', url: '/'}, {label: 'about', url: '/about'}]} />
+    <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} />
 	</main>
 </Layout>
 
