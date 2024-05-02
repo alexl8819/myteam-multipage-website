@@ -18,7 +18,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
 
   <nav class="header__nav">
     <ol class="nav__list">
-      {links.map(({url, label}) => (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>))}
+      {links.map(({url, label}) => (<li class="nav__link"><a href={`${baseURL === '/' ? baseURL : `${baseURL}/`}${url}`}>{label}</a></li>))}
     </ol>
   </nav>
 
@@ -29,7 +29,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
       <Image class="sidebar__icon" src={closeIcon} alt="mobile nav icon" loading="lazy" />
       <nav class="sidebar__nav">
         <ol class="nav__list">
-          {links.map(({url, label}) => (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>))}
+          {links.map(({url, label}) => (<li class="nav__link"><a href={`${baseURL === '/' ? baseURL : `${baseURL}/`}${url}`}>{label}</a></li>))}
         </ol>
       </nav>
     </div>
