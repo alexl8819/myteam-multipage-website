@@ -10,13 +10,17 @@ import sidebarBgImg from '../assets/bg-pattern-about-1-mobile-nav-1.svg';
 const { links } = Astro.props;
 
 const sidebarBottomBg = await getImage({ src: sidebarBgImg });
+
+const isDev = import.meta.env.DEV;
+const baseUrl = import.meta.env.BASE_URL;
+
 ---
 <header class="header">
   <Image class="header__logo" src={logo} alt="main site logo" loading="eager" />
 
   <nav class="header__nav">
     <ol class="nav__list">
-      {links.map(({url, label}) => (<li class="nav__link"><a href={url}>{label}</a></li>))}
+      {links.map(({url, label}) => (<li class="nav__link"><a href={isDev ? url : baseUrl + url}>{label}</a></li>))}
     </ol>
   </nav>
 
