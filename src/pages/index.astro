@@ -14,11 +14,12 @@ import thirdSectionBottomBgImg from '../assets/bg-pattern-home-5.svg';
 import iconPerson from '../assets/icon-person.svg';
 import iconCog from '../assets/icon-cog.svg';
 import iconChart from '../assets/icon-chart.svg';
-//
+// Backgrounds
 const homeIntroBgImg = await getImage({ src: firstSectionBgImg, format: 'webp' });
 const highlightsBgImg = await getImage({ src: secondSectionBgImg, format: 'webp' });
 const reviewsTopBgImg = await getImage({ src: thirdSectionTopBgImg, format: 'webp' });
 const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format: 'webp' });
+
 ---
 
 <Layout title="Homepage">
@@ -27,8 +28,11 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
 
 		<section class="home__intro" style={`background-image: url(${homeIntroBgImg.src})`}>
 			<h2 class="intro__heading">Find the best <span class="intro__heading--highlighted">talent</span></h2>
-			<p class="intro__text">Finding the right people and building high performing teams can be hard. Most companies aren’t tapping into the abundance of global talent. We’re about to change that.</p>
-		</section>
+			<div class="intro__wrapper">
+        <div class="intro__border"></div>
+        <p class="intro__text">Finding the right people and building high performing teams can be hard. Most companies aren’t tapping into the abundance of global talent. We’re about to change that.</p>
+		  </div>
+    </section>
     
     <section class="home__highlights" style={`background-image: url(${highlightsBgImg.src})`}>
       <div class="highlights__wrapper">
@@ -69,27 +73,33 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     <section class="home__reviews" style={`background-image: url(${reviewsTopBgImg.src})`}>
       <div class="reviews__wrapper" style={`background-image: url(${reviewsBottomBgImg.src})`}>
         <h2 class="reviews__heading">Delivering real results for top companies. Some of our <span class="reviews__heading--highlighted">success stories.</span></h2>
-        <!-- TODO: wrap reviews in list -->
-        <Review
-          author="Kady Baker" 
-          title="Product Manager at Bookmark" 
-          avatar="kady"  
-          text="The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned."
-        />
-        
-        <Review
-          author="Aiysha Reese"
-          title="Founder of Manage"
-          avatar="aiysha"
-          text="We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!"
-        />
-        
-        <Review
-          author="Arthur Clarke"
-          title="Co-founder of MyPhysio"
-          avatar="arthur"
-          text="Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month."
-        />
+
+        <ul class="reviews__container">
+          <li>
+            <Review
+              author="Kady Baker" 
+              title="Product Manager at Bookmark" 
+              avatar="kady"  
+              text="The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned."
+            />
+          </li>
+          <li>
+            <Review
+              author="Aiysha Reese"
+              title="Founder of Manage"
+              avatar="aiysha"
+              text="We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!"
+            />
+          </li>
+          <li>
+            <Review
+              author="Arthur Clarke"
+              title="Co-founder of MyPhysio"
+              avatar="arthur"
+              text="Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month."
+            />
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -102,12 +112,24 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: var(--white);
     text-align: center;
 		padding: 0 20px 150px;
   }
+  .intro__border {
+    display: none;
+  }
+  .intro__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
   .intro__text {
-    font-size: 0.9375rem;
+    font-size: 0.9375rem; /* 15px */
     font-weight: 600;
     line-height: 1.5625rem;
   }
@@ -143,6 +165,8 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: top right -50%;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 60px;
   }
   .highlights__highlight {
@@ -185,6 +209,10 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     background-repeat: no-repeat;
     background-position: bottom right;
     padding: 20px 20px 120px;
+  }
+  .reviews__container {
+    display: flex;
+    flex-direction: column;
   }
   .reviews__heading {
     text-align: center;
@@ -229,6 +257,78 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     .reviews__wrapper {
       background-position: bottom 2.5% right;
       padding: 0 170px 80px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .home__intro {
+      flex-direction: row;
+      text-align: left;
+      background-size: 25%;
+      background-position: bottom right 18%;
+      padding: 20px 105px 180px;
+    }
+    .intro__heading {
+      font-size: 6.25rem;
+      padding: 0;
+      width: 50%;
+    }
+    .intro__wrapper {
+      width: 50%;
+      height: 200px;
+      padding: 0 85px;
+    }
+    .intro__border {
+      display: block;
+      width: 50px;
+      height: 4px;
+      background-color: var(--rapture-blue);
+    }
+    .intro__text {
+      font-size: 1.125rem;
+    }
+    .home__highlights {
+      flex-direction: row;
+      padding: 120px 20px;
+      background-size: 15%;
+      background-position: bottom right -13%;
+    }
+    .highlights__wrapper {
+      width: 50%;
+      padding: 40px 120px;
+    }
+    .highlights__border {
+      margin-bottom: 60px;
+    }
+    .highlights__container {
+      padding-top: 65px;
+      padding-right: 135px;
+      width: 50%;
+    }
+    .highlights__heading, .reviews__heading {
+      font-size: 3rem;
+    }
+    .highlights__highlight {
+      margin: 10px 0;
+      padding: 0;
+    }
+    .highlights__highlight:first-child {
+      padding-left: 0;
+    }
+    .home__reviews {
+      background-size: 12%;
+      background-position: top left -5%;
+      padding: 0;
+    }
+    .reviews__wrapper {
+      padding: 110px 130px;
+      background-position: bottom 5% right -3%;
+    }
+    .reviews__container {
+      margin-top: 20px;
+      flex-direction: row;
+    }
+    .reviews__heading {
+      padding: 0 120px;
     }
   }
 </style>
