@@ -24,8 +24,8 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     </section> : null
   }
   <section class="footer__bottom">
-    <div>
-      <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" />
+    <div class="bottom__header">
+      <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" loading="lazy" />
     
       <nav class="bottom__nav">
         <ol class="nav__list">
@@ -34,7 +34,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       </nav>
     </div>
 
-    <div>
+    <div class="bottom__content">
       <p class="bottom__address">987  Hillcrest Lane</p>
       <p class="bottom__address">Irvine, CA</p>
       <p class="bottom__address">California 92714</p>
@@ -107,6 +107,12 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     width: 96px;
     height: 24px;
   }
+  .bottom__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .bottom__address {
     text-align: center;
     font-weight: 600;
@@ -116,6 +122,8 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     margin: 25px 0;
   }
   .bottom__socials {
+    display: flex;
+    align-items: center;
     margin: 25px 0;
   }
   .nav__list, .bottom__socials {
@@ -142,6 +150,20 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     }
     .bottom__address, .bottom__copyright {
       text-align: right;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .footer__contact {
+      padding: 60px 250px;
+      background-size: 18%;
+      background-posiiton: bottom -10% right;
+    }
+    .contact__heading {
+      font-size: 3rem;
+    }
+    .bottom__logo {
+      width: 160px;
+      height: 40px;
     }
   }
 </style>
