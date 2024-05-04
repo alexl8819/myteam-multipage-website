@@ -37,10 +37,10 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     <section class="about__intro" style={`background-image: url(${aboutIntroBgImg.src})`}>
       <h2 class="intro__heading">About</h2>
 
-      <p class="intro__text">We help companies build dynamic teams made up of top global talent. 
-      Using our network of passionate professionals we drive innovation 
-      and deliver incredible outcomes. Talented, diverse teams shape the 
-      best products and experiences. We’ll bring those teams to you.</p>
+      <div class="intro__wrapper">
+        <div class="intro__border"></div>
+        <p class="intro__text">We help companies build dynamic teams made up of top global talent. Using our network of passionate professionals we drive innovation and deliver incredible outcomes. Talented, diverse teams shape the best products and experiences. We’ll bring those teams to you.</p>
+      </div>
     </section>
 
     <section class="about__directors" style={`background-image: url(${aboutDirectorsTopBgImg.src})`}>
@@ -147,6 +147,14 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     font-weight: 700;
     margin: 40px 0;
   }
+  .intro__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intro__border {
+    display: none;
+  }
   .intro__text {
     font-size: 0.938rem;
     font-weight: 600;
@@ -216,6 +224,54 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     .featured__logo {
       width: 100px;
       margin: 0 20px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .about__intro {
+      flex-direction: row;
+      background-position: bottom right -5%;
+    }
+    .intro__heading, .intro__wrapper {
+      width: 50%;
+    }
+    .intro__wrapper {
+      padding: 40px 40px 0;
+    }
+    .intro__heading {
+      font-size: 4rem;
+    }
+    .intro__border {
+      display: block;
+      width: 50px;
+      height: 4px;
+      background-color: var(--light-coral);
+      margin-bottom: 40px;
+    }
+    .intro__text {
+      text-align: left;
+    }
+    .about__directors {
+      background-position: top left -8%;
+    }
+    .directors__heading, .featured__heading {
+      font-size: 3rem;
+    }
+    .directors__cards {
+      padding: 25px 140px;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 25px;
+    }
+    .about__featured {
+      background-size: 12%;
+      background-position: top left;
+      padding: 50px 0 90px;
+    }
+    .featured__logos {
+      margin-top: 20px;
+    }
+    .featured__logo {
+      width: auto;
+      margin: 0 40px;
     }
   }
 </style>
