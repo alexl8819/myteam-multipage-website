@@ -22,28 +22,30 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     
     <section class="contact">
       <div class="contact__wrapper" style={`background-image: url(${contactBottomBg.src})`}>
-        <h2 class="contact__heading">Contact</h2>
+        <div class="contact__header">
+          <h2 class="contact__heading">Contact</h2>
   
-        <h3 class="contact__subheading">Ask us about</h3>
+          <h3 class="contact__subheading">Ask us about</h3>
+
+          <ol class="contact__featured">
+            <li class="featured__item">
+              <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
   
-        <ol class="contact__featured">
-          <li class="featured__item">
-            <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
+              <p class="item__text">The quality of our talent network</p>
+            </li>
+            <li class="featured__item">
+              <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
   
-            <p class="item__text">The quality of our talent network</p>
-          </li>
-          <li class="featured__item">
-            <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
+              <p class="item__text">Usage & implementation of our software</p>
+            </li>
+            <li class="featured__item">
+              <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
   
-            <p class="item__text">Usage & implementation of our software</p>
-          </li>
-          <li class="featured__item">
-            <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
-  
-            <p class="item__text">How we help drive innovation</p>
-          </li>
-        </ol>
-  
+              <p class="item__text">How we help drive innovation</p>
+            </li>
+          </ol>
+        </div>  
+        
         <div class="contact__formcontainer">
           <ContactForm client:visible />
         </div>
@@ -66,6 +68,8 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     color: var(--white);
   }
   .contact__wrapper {
+    display: flex;
+    flex-direction: column;
     background-position: bottom -13% right -60%;
     padding: 40px 25px;
   }
@@ -127,6 +131,20 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     }
     .featured__item:first-child > .item__text { /* TODO: temp fix, also should not be necessary */
       padding-left: 15px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .contact {
+      text-align: left;
+    }
+    .contact__wrapper {
+      flex-direction: row;
+    }
+    .contact__header, .contact__formcontainer {
+      width: 50%;
+    }
+    .contact__subheading {
+      margin: 30px 0;
     }
   }
 </style>
