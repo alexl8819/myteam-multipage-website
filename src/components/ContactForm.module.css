@@ -5,6 +5,7 @@
 }
 .form__group {
   display: flex;
+  flex-direction: column;
 }
 .group__label {
   position: absolute;
@@ -22,9 +23,17 @@
   background: none; 
   border-bottom: 1px solid var(--white);
   color: var(--white);
+  font-weight: 600;
   margin: 5px 0;
   padding: 20px 10px;
   width: 100%;
+}
+.group__errorfield {
+  visibility: hidden;
+  font-size: 0.625rem;
+  font-style: italic;
+  color: var(--light-coral);
+  padding: 2px 5px;
 }
 .group__textinput:focus, .group__textarea:focus {
   outline: none;
@@ -37,9 +46,12 @@
 .group__textinput--valid, .group__textarea--valid {
   border-bottom: 1px solid var(--rapture-blue);
 }
-.group__textinput {}
-.group__textinput--error {
-  border-bottom: var(--light-coral);
+.group__textinput--error,
+.group__textarea--error {
+  border-bottom: 1px solid var(--light-coral);
+}
+.group__textinput--error + .group__errorfield, .group__textarea--error + .group__errorfield {
+  visibility: visible;
 }
 .group__textarea {
   padding: 40px 10px;
