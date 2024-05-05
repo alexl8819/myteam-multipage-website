@@ -1,6 +1,8 @@
 ---
 import { getImage, Image } from 'astro:assets';
 
+import { LinkButton } from './Button';
+
 import siteLogo from '../assets/logo.svg';
 import contactUsBgSvg from '../assets/bg-pattern-home-6-about-5.svg';
 
@@ -20,7 +22,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
       <h2 class="contact__heading">Ready to get started?</h2>
 
-      <a href={`${baseURL}contact`} class="contact__button">contact us</a>
+      <LinkButton isDark url={`${baseURL}contact`} customStyle={{ width: '153px', padding: '12px 0' }}>contact us</LinkButton>
     </section> : null
   }
   <section class="footer__bottom">
@@ -85,23 +87,6 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
   .contact__heading {
     font-size: 2rem;
     margin: 40px 0;
-  }
-  .contact__button {
-    font-size: 1.125rem;
-    font-weight: 600;
-    border: 2px solid var(--sacramento-state-green);
-    border-radius: 25px;
-    background-color: transparent;
-    width: 153px;
-    padding: 12px 0;
-    cursor: pointer;
-  }
-  .contact__button:hover {
-    background-color: var(--white);
-    border: 2px solid var(--white);
-  }
-  .contact__button:disabled {
-    opacity: 0.5;
   }
   .bottom__logo {
     width: 96px;
