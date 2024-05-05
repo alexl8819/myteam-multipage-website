@@ -31,7 +31,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
       <Image class="sidebar__icon" src={closeIcon} alt="mobile nav icon" loading="lazy" />
       <nav class="sidebar__nav">
         <ol class="nav__list">
-          {links.map(({url, label}) => (url === 'contact' ? (<li class="nav__link"><LinkButton url={`${baseURL}${url}`}>{label}</LinkButton></li>) : (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)))}
+          {links.map(({url, label}) => (url === 'contact' ? (<li class="nav__link"><LinkButton url={`${baseURL}${url}`} customStyle={{ padding: '10px 30px' }}>{label}</LinkButton></li>) : (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)))}
         </ol>
       </nav>
     </div>
@@ -122,7 +122,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     margin: 35px 0;
   }
   .sidebar__nav .nav__list > .nav__link:last-child {
-    padding: 20px 0;
+    margin: 55px 0;
   }
   @media screen and (min-width: 768px) {
     .header {
