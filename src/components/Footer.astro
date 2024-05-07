@@ -26,22 +26,26 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     </section> : null
   }
   <section class="footer__bottom">
-    <div class="bottom__header">
-      <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" loading="lazy" />
+    <div class="bottom__left">
+      <div class="bottom__header">
+        <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" loading="lazy" />
     
-      <nav class="bottom__nav">
-        <ol class="nav__list">
-          {links.map(({url, label}) => <li><a href={`${baseURL}${url}`}>{label}</a></li>)}
-        </ol>
-      </nav>
+        <nav class="bottom__nav">
+          <ol class="nav__list">
+            {links.map(({url, label}) => <li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)}
+          </ol>
+        </nav>
+      </div>
+
+      <div class="bottom__address">
+        <p>987 Hillcrest Lane</p>
+        <p>Irvine, CA</p>
+        <p>California 92714</p>
+        <p>Call us : 949-833-7432</p>
+      </div>
     </div>
 
     <div class="bottom__content">
-      <p class="bottom__address">987  Hillcrest Lane</p>
-      <p class="bottom__address">Irvine, CA</p>
-      <p class="bottom__address">California 92714</p>
-      <p class="bottom__address">Call Us : 949-833-7432</p>
-    
       <ul class="bottom__socials">
         <li class="socials__icon">
           <Image src={facebookIcon} alt="facebook icon in footer" />
@@ -54,7 +58,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
         </li>
       </ul>
 
-      <p class="bottom__copyright">Copyright 2020. All Rights Reserve</p>
+      <p class="bottom__copyright">Copyright 2020. All Rights Reserved.</p>
     </div>
   </section>
 </footer>
@@ -92,7 +96,8 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     width: 96px;
     height: 24px;
   }
-  .bottom__content {
+  .bottom__left, .bottom__content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,6 +106,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
   .bottom__address {
     text-align: center;
     font-weight: 600;
+    line-height: 25px;
     margin-bottom: 5px;
   }
   .bottom__nav {
@@ -121,7 +127,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
   }
   @media screen and (min-width: 768px) {
     .footer__bottom {
-      padding: 10px 70px;
+      padding: 30px 70px;
     }
     .footer__contact {
       background-size: 25%;
@@ -129,7 +135,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       justify-content: space-between;
       padding: 60px 110px;
     }
-    .footer__bottom {
+    .bottom__left, .bottom__content {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -138,6 +144,10 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     }
   }
   @media screen and (min-width: 1440px) {
+    .footer__bottom {
+      padding: 30px 120px;
+      flex-direction: row;
+    }
     .footer__contact {
       padding: 60px 250px;
       background-size: 18%;
@@ -145,6 +155,24 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     }
     .contact__heading {
       font-size: 3rem;
+    }
+    .nav__link:first-child {
+      margin-right: 40px;
+    }
+    .bottom__left, .bottom__content {
+      padding: 10px 0;
+      justify-content: space-around;
+    }
+    .bottom__address {
+      text-align: left;
+    }
+    .bottom__content {
+      flex-direction: column;
+      align-items: end;
+      padding-right: 60px;
+    }
+    .bottom__socials {
+      margin: 0 0 45px;
     }
     .bottom__logo {
       width: 160px;
