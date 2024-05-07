@@ -39,7 +39,6 @@ const { title } = Astro.props;
 	html {
 		font-family: "Livvic", sans-serif;
 		background-color: var(--midnight-green);
-		height: 100%;
 	}
   a {
 		color: inherit;
@@ -53,6 +52,9 @@ const { title } = Astro.props;
 		padding: 0;
 	}
   .container {
+		display: flex;
+		flex-direction: column;
     min-width: 320px;
+		min-height: 100vh;
   }
 </style>
