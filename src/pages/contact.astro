@@ -29,17 +29,23 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
 
           <ol class="contact__featured">
             <li class="featured__item">
-              <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
+              <div class="item__iconcontainer">
+                <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
+              </div>
   
               <p class="item__text">The quality of our talent network</p>
             </li>
             <li class="featured__item">
-              <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
+              <div class="item__iconcontainer">
+                <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
+              </div>
   
               <p class="item__text">Usage & implementation of our software</p>
             </li>
             <li class="featured__item">
-              <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
+              <div class="item__iconcontainer">
+                <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
+              </div>
   
               <p class="item__text">How we help drive innovation</p>
             </li>
@@ -89,8 +95,8 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
+    justify-content: left;
+    align-items: center;
     margin: 25px 0;
   }
   .featured__item {
@@ -99,19 +105,19 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     align-items: center;
     margin: 10px 0;
   }
+  .item__iconcontainer {
+    width: 85px;
+  }
   .item__icon {
-    width: 72px;
-    height: 72px;
+    width: auto;
+    height: auto;
   }
   .item__text {
     text-align: left;
     font-size: 1.125rem;
     line-height: 28px;
     font-weight: 700;
-    padding-left: 15px;
-  }
-  .featured__item:first-child > .item__text { /* TODO: temp fix, also should not be necessary */
-    padding-left: 20px;
+    padding: 0 15px;
   }
   .contact__formcontainer {
     width: 100%;
@@ -126,14 +132,14 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
       background-position: bottom right -17%;
       padding: 40px 125px 60px;
     }
+    .contact__featured {
+      align-items: flex-start;
+    }
     .contact__heading {
       font-size: 4rem;
     }
-    .featured__item:first-child > .item__text { /* TODO: temp fix, also should not be necessary */
-      padding-left: 15px;
-    }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1280px) {
     .contact {
       background-position: top 50px left -100px;
       background-size: 180px;
@@ -142,13 +148,21 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     .contact__wrapper {
       background-position: bottom right -100px;
       flex-direction: row;
-      padding: 40px 150px 60px;
+      padding: 40px 100px 60px;
     }
     .contact__header, .contact__formcontainer {
       width: 50%;
     }
     .contact__subheading {
       margin: 30px 0;
+    }
+    .item__text {
+      padding: 0 5px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .contact__wrapper {
+      padding: 40px 150px 60px;
     }
   }
 </style>
