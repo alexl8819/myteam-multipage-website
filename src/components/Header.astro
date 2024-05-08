@@ -72,12 +72,14 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     height: 20px;
     cursor: pointer;
     z-index: 3;
-    position: relative;
+    position: fixed;
+    top: 42px;
+    right: 25px;
   }
   .navtarget__sidebar {
     display: none;
     background-repeat: no-repeat;
-    background-position: bottom right -185%;
+    background-position: bottom right -100px;
     padding: 25px;
     overflow-x: hidden;
     z-index: 2;
@@ -85,7 +87,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   .navtarget__toggle:checked + .navtarget__sidebar {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 68%;
@@ -149,7 +151,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
       display: none;
     }
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     .header {
       padding: 60px 110px;
     }
