@@ -43,17 +43,16 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 50px;
     padding: 40px 25px;
     z-index: 0;
   }
   .header__logo {
     width: 128px;
     height: 32px;
-    margin-right: 20px;
   }
   .header__nav {
     display: none;
+    margin-left: 20px;
   }
   .navtarget__icon, .navtarget__toggle {
     width: 20px;
@@ -154,6 +153,12 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   @media screen and (min-width: 1024px) {
     .header {
       padding: 60px 110px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .header__logo {
+      width: 160px;
+      height: 40px;
     }
   }
 </style>
