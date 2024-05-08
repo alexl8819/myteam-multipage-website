@@ -43,7 +43,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 25px;
+    padding: 40px 35px;
     z-index: 0;
   }
   .header__logo {
@@ -52,7 +52,6 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   }
   .header__nav {
     display: none;
-    margin-left: 20px;
   }
   .navtarget__icon, .navtarget__toggle {
     width: 20px;
@@ -67,13 +66,12 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin-left: -25px;
-    height: 20px;
+    height: 25px;
     cursor: pointer;
     z-index: 3;
     position: fixed;
     top: 42px;
-    right: 25px;
+    right: 35px;
   }
   .navtarget__sidebar {
     display: none;
@@ -132,6 +130,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     }
     .header__nav {
       display: block;
+      margin-left: 20px;
       width: 100%;
     }
     .nav__list {
