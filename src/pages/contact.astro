@@ -133,12 +133,16 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
       padding-left: 15px;
     }
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     .contact {
+      background-position: top 50px left -100px;
+      background-size: 180px;
       text-align: left;
     }
     .contact__wrapper {
+      background-position: bottom right -100px;
       flex-direction: row;
+      padding: 40px 150px 60px;
     }
     .contact__header, .contact__formcontainer {
       width: 50%;
