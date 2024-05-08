@@ -65,7 +65,6 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
 <style>
   .footer {
     width: 100%;
-    min-height: 50px;
   }
   .footer__contact {
     display: flex;
@@ -73,10 +72,10 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-size: 50%;
+    background-size: 200px;
     background-repeat: no-repeat;
     background-color: var(--light-coral);
-    background-position: bottom -12% left;
+    background-position: bottom -20px left;
     padding: 46px 60px 86px;
     color: var(--sacramento-state-green);
   }
@@ -134,7 +133,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       padding: 30px 70px;
     }
     .footer__contact {
-      background-size: 25%;
+      background-size: 225px;
       flex-direction: row;
       justify-content: space-between;
       padding: 60px 110px;
@@ -147,15 +146,15 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       text-align: right;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1280px) {
     .footer__bottom {
       padding: 30px 120px;
       flex-direction: row;
     }
     .footer__contact {
       padding: 60px 250px;
-      background-size: 18%;
-      background-posiiton: bottom -10% right;
+      background-size: 250px;
+      background-position: bottom -10% left;
     }
     .contact__heading {
       font-size: 3rem;
