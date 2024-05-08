@@ -29,6 +29,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     <div class="home">
       <section class="home__intro" style={`background-image: url(${homeIntroBgImg.src})`}>
         <h2 class="intro__heading">Find the best <span class="intro__heading--highlighted">talent</span></h2>
+          
         <div class="intro__wrapper">
           <div class="intro__border"></div>
           <p class="intro__text">Finding the right people and building high performing teams can be hard. Most companies aren’t tapping into the abundance of global talent. We’re about to change that.</p>
@@ -242,13 +243,14 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     .highlights__wrapper {
       padding: 120px 200px 20px 80px;
     }
+    .highlights__container {
+      padding: 0 70px;
+    }
     .highlights__highlight {
       flex-direction: row;
+      justify-content: left;
       text-align: left;
-      padding: 20px 95px;
-    }
-    .highlights__highlight:first-child { /* fix: additional padding should not be necessary */
-      padding-left: 100px;
+      padding: 5px 75px 5px 0;
     }
     .highlight__container {
       padding: 0 25px;
@@ -264,7 +266,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
       padding: 0 170px 80px;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1280px) {
     .home__intro {
       flex-direction: row;
       text-align: left;
@@ -325,7 +327,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
       padding: 0;
     }
     .reviews__wrapper {
-      padding: 110px 130px;
+      padding: 110px 125px;
       background-position: bottom 3% right -3%;
     }
     .reviews__container {
