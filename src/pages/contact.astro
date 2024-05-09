@@ -13,13 +13,13 @@ import iconChart from '../assets/icon-chart.svg';
 ---
 
 <Layout title="Contact">
-	<main class="container">
+  <main class="container">
     <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
-    
+
     <section class="contact">
       <div class="contact__header">
         <h2 class="contact__heading">Contact</h2>
-  
+
         <h3 class="contact__subheading">Ask us about</h3>
 
         <ol class="contact__featured">
@@ -27,33 +27,33 @@ import iconChart from '../assets/icon-chart.svg';
             <div class="item__iconcontainer">
               <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
             </div>
-  
+
             <p class="item__text">The quality of our talent network</p>
           </li>
           <li class="featured__item">
             <div class="item__iconcontainer">
               <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
             </div>
-  
+
             <p class="item__text">Usage & implementation of our software</p>
           </li>
           <li class="featured__item">
             <div class="item__iconcontainer">
               <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
             </div>
-  
+
             <p class="item__text">How we help drive innovation</p>
           </li>
         </ol>
-      </div>  
-        
+      </div>
+
       <div class="contact__formcontainer">
         <ContactForm client:visible />
       </div>
     </section>
-      
+
     <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} />
-	</main>
+  </main>
 </Layout>
 
 <style>
