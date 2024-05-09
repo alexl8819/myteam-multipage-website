@@ -42,7 +42,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
 
         <ul class="highlights__container">
           <li class="highlights__highlight">
-            <Image class="highlight__icon" src={iconPerson} alt="highlight person icon" loading="eager" />
+            <Image class="highlight__icon" src={iconPerson} alt="highlight person icon" width="72" height="72" loading="lazy" />
 
             <div class="highlight__container">
               <h3 class="highlight__heading highlight__heading--bolded">Experienced Individuals</h3>
@@ -51,7 +51,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
           </li>
 
           <li class="highlights__highlight">
-            <Image class="highlight__icon" src={iconCog} alt="highlight cog icon" loading="lazy" />
+            <Image class="highlight__icon" src={iconCog} alt="highlight cog icon" width="72" height="72" loading="lazy" />
 
             <div class="highlight__container">
               <h3 class="highlight__heading highlight__heading--bolded">Easy to Implement</h3>
@@ -60,7 +60,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
           </li>
 
           <li class="highlights__highlight">
-            <Image class="highlight__icon" src={iconChart} alt="highlight chart icon" loading="lazy" />
+            <Image class="highlight__icon" src={iconChart} alt="highlight chart icon" width="72" height="72" loading="lazy" />
 
             <div class="highlight__container">
               <h3 class="highlight__heading highlight__heading--bolded">Enhanced Productivity</h3>
@@ -184,8 +184,6 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     margin: 40px 0;
   }
   .highlight__icon {
-    width: 72px;
-    height: 72px;
     margin-bottom: 10px;
   }
   .highlight__heading {
@@ -240,11 +238,15 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     .highlights__container {
       padding: 0 70px;
     }
-    .highlights__highlight {
+    .highlights__highlight { 
+      display: flex;
       flex-direction: row;
-      justify-content: left;
+      justify-content: start;
       text-align: left;
       padding: 5px 75px 5px 0;
+    }
+    .highlights__highlight:first-child {
+      padding-left: 5px;
     }
     .highlight__container {
       padding: 0 25px;
