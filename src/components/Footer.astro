@@ -18,7 +18,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
 ---
 
 <footer class="footer">
-  { includeContact ? 
+  { includeContact ?
     <section class="footer__contact" style={`background-image: url(${contactUsBgImg.src});`}>
       <h2 class="contact__heading">Ready to get started?</h2>
 
@@ -29,7 +29,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     <div class="bottom__left">
       <div class="bottom__header">
         <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" loading="lazy" />
-    
+
         <nav class="bottom__nav">
           <ol class="nav__list">
             {links.map(({url, label}) => <li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)}
@@ -127,6 +127,13 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     flex-direction: row;
     justify-content: space-between;
     width: 104px;
+  }
+  .socials__icon:hover {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(75%) sepia(91%) saturate(2704%) hue-rotate(309deg) brightness(100%) contrast(94%); 
+  }
+  .nav__link:hover {
+    color: var(--light-coral);
   }
   @media screen and (min-width: 768px) {
     .footer__bottom {
