@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-html"
+  ],
+  "plugins": ["stylelint-selector-bem-pattern"],
+  "rules": {
+    "selector-class-pattern": ".",
+    "property-no-vendor-prefix": [true, {"ignoreProperties": ["appearance", "user-select"]}],
+    "plugin/selector-bem-pattern": {
+      "preset": "bem"
+    }
+  }
+}
