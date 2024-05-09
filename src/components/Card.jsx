@@ -20,8 +20,8 @@ export default function Card ({ name, title, avatar, quote, opened=false }) {
 			{ isOpened && <p className={styles.cardText}>{quote}</p> }
       { isOpened && 
           <div className={styles.cardSocials}>
-            <img src={iconTwitter.src} alt={`${name}'s twitter icon`} loading="lazy" />
-            <img src={iconLinkedin.src} alt={`${name}'s linkedin icon`} loading="lazy" />
+            <img className={styles.socialsIcon} src={iconTwitter.src} alt={`${name}'s twitter icon`} loading="lazy" />
+            <img className={styles.socialsIcon} src={iconLinkedin.src} alt={`${name}'s linkedin icon`} loading="lazy" />
           </div>
       }
 	  </div>

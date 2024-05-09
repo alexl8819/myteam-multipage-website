@@ -50,7 +50,11 @@
 }
 .socials__icon {
   width: 24px;
-  height: 20px;
+  height: 19.5px;
+}
+.socials__icon:hover {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(75%) sepia(91%) saturate(2704%) hue-rotate(309deg) brightness(100%) contrast(94%); 
 }
 .card__checkbox:checked + .card__expansion {
   background-color: var(--rapture-blue);
