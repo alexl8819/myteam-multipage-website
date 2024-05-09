@@ -56,8 +56,12 @@
   cursor: pointer;
   filter: brightness(0) saturate(100%) invert(75%) sepia(91%) saturate(2704%) hue-rotate(309deg) brightness(100%) contrast(94%); 
 }
+.card__checkbox:not(&:checked):hover + .card__expansion,
 .card__checkbox:checked + .card__expansion {
   background-color: var(--rapture-blue);
+}
+.card__checkbox:checked:hover + .card__expansion {
+  background-color: var(--light-coral);
 }
 .card__checkbox {
   -moz-appearance: none;
