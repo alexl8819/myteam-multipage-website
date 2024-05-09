@@ -72,37 +72,35 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
         </ul>
       </section>
   
-      <section class="home__reviews" style={`background-image: url(${reviewsTopBgImg.src})`}>
-        <div class="reviews__wrapper" style={`background-image: url(${reviewsBottomBgImg.src})`}>
-          <h2 class="reviews__heading">Delivering real results for top companies. Some of our <span class="reviews__heading--highlighted">success stories.</span></h2>
+      <section class="home__reviews" style={`background-image: url(${reviewsTopBgImg.src}), url(${reviewsBottomBgImg.src})`}>
+        <h2 class="reviews__heading">Delivering real results for top companies. Some of our <span class="reviews__heading--highlighted">success stories.</span></h2>
   
-          <ul class="reviews__container">
-            <li>
-              <Review
-                author="Kady Baker" 
-                title="Product Manager at Bookmark" 
-                avatar="kady"  
-                text="The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned."
-              />
-            </li>
-            <li>
-              <Review
-                author="Aiysha Reese"
-                title="Founder of Manage"
-                avatar="aiysha"
-                text="We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!"
-              />
-            </li>
-            <li>
-              <Review
-                author="Arthur Clarke"
-                title="Co-founder of MyPhysio"
-                avatar="arthur"
-                text="Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month."
-              />
-            </li>
-          </ul>
-        </div>
+        <ul class="reviews__container">
+          <li>
+            <Review
+              author="Kady Baker" 
+              title="Product Manager at Bookmark" 
+              avatar="kady"  
+              text="The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned."
+            />
+          </li>
+          <li>
+            <Review
+              author="Aiysha Reese"
+              title="Founder of Manage"
+              avatar="aiysha"
+              text="We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!"
+            />
+          </li>
+          <li>
+            <Review
+              author="Arthur Clarke"
+              title="Co-founder of MyPhysio"
+              avatar="arthur"
+              text="Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month."
+            />
+          </li>
+        </ul>
       </section>  
     </div>
 
@@ -167,7 +165,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     color: var(--light-coral);
   }
   .home__highlights {
-		background-color: var(--sacramento-state-green);
+    background-color: var(--sacramento-state-green);
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: top right -50%;
@@ -207,20 +205,17 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
   }
   .home__reviews {
     background-color: var(--deep-jungle-green);
-    background-repeat: no-repeat;
-    padding: 110px 0 0;
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+    padding: 125px 0 110px;
     margin: -26px 0;
-  }
-  .reviews__wrapper {
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    padding: 20px 20px 120px;
   }
   .reviews__container {
     display: flex;
     flex-direction: column;
   }
   .reviews__heading {
+    padding: 0 30px;
     text-align: center;
   }
   .reviews__heading--highlighted {
@@ -261,9 +256,12 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     .highlight__icon {
       margin-bottom: 0;
     }
-    .reviews__wrapper {
-      background-position: bottom 2.5% right;
-      padding: 0 170px 80px;
+    .home__reviews {
+      background-position: top left, bottom 2.5% right;
+      padding: 120px 75px 80px;
+    }
+    .reviews__heading {
+      padding: 0 65px;
     }
   }
   @media screen and (min-width: 1280px) {
@@ -323,12 +321,8 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     }
     .home__reviews {
       background-size: 12%;
-      background-position: top left -5%;
-      padding: 0;
-    }
-    .reviews__wrapper {
+      background-position: top left -5%, bottom 3% right -3%;
       padding: 110px 125px;
-      background-position: bottom 3% right -3%;
     }
     .reviews__container {
       margin-top: 20px;
