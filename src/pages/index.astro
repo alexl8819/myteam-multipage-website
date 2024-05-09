@@ -5,8 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Review from '../components/Review.astro';
-// Background images
-import firstSectionBgImg from '../assets/bg-pattern-home-2.svg';
+// Optimized Background images
 import secondSectionBgImg from '../assets/bg-pattern-home-3.svg';
 import thirdSectionTopBgImg from '../assets/bg-pattern-home-4-about-3.svg';
 import thirdSectionBottomBgImg from '../assets/bg-pattern-home-5.svg';
@@ -15,7 +14,6 @@ import iconPerson from '../assets/icon-person.svg';
 import iconCog from '../assets/icon-cog.svg';
 import iconChart from '../assets/icon-chart.svg';
 // Backgrounds
-const homeIntroBgImg = await getImage({ src: firstSectionBgImg, format: 'webp' });
 const highlightsBgImg = await getImage({ src: secondSectionBgImg, format: 'webp' });
 const reviewsTopBgImg = await getImage({ src: thirdSectionTopBgImg, format: 'webp' });
 const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format: 'webp' });
@@ -23,47 +21,47 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
 ---
 
 <Layout title="Homepage">
-	<main class="container">
+  <main class="container">
     <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
-    
+
     <div class="home">
-      <section class="home__intro" style={`background-image: url(${homeIntroBgImg.src})`}>
+      <section class="home__intro">
         <h2 class="intro__heading">Find the best <span class="intro__heading--highlighted">talent</span></h2>
-          
+
         <div class="intro__wrapper">
           <div class="intro__border"></div>
           <p class="intro__text">Finding the right people and building high performing teams can be hard. Most companies aren’t tapping into the abundance of global talent. We’re about to change that.</p>
         </div>
       </section>
-      
+
       <section class="home__highlights" style={`background-image: url(${highlightsBgImg.src})`}>
         <div class="highlights__wrapper">
           <div class="highlights__border"></div>
           <h2 class="highlights__heading">Build & manage distributed teams like no one else.</h2>
         </div>
-    
+
         <ul class="highlights__container">
           <li class="highlights__highlight">
             <Image class="highlight__icon" src={iconPerson} alt="highlight person icon" loading="eager" />
-  
+
             <div class="highlight__container">
               <h3 class="highlight__heading highlight__heading--bolded">Experienced Individuals</h3>
               <p class="highlight__text">Our network is made up of highly experienced professionals who are passionate about what they do.</p>
             </div>
           </li>
-  
+
           <li class="highlights__highlight">
             <Image class="highlight__icon" src={iconCog} alt="highlight cog icon" loading="lazy" />
-  
+
             <div class="highlight__container">
               <h3 class="highlight__heading highlight__heading--bolded">Easy to Implement</h3>
               <p class="highlight__text">Our processes have been refined over years of implementation meaning our teams always deliver.</p>
             </div>
           </li>
-        
+
           <li class="highlights__highlight">
             <Image class="highlight__icon" src={iconChart} alt="highlight chart icon" loading="lazy" />
-  
+
             <div class="highlight__container">
               <h3 class="highlight__heading highlight__heading--bolded">Enhanced Productivity</h3>
               <p class="highlight__text">Our customized platform with in-built analytics helps you manage your distributed teams.</p>
@@ -71,10 +69,10 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
           </li>
         </ul>
       </section>
-  
+
       <section class="home__reviews" style={`background-image: url(${reviewsTopBgImg.src}), url(${reviewsBottomBgImg.src})`}>
         <h2 class="reviews__heading">Delivering real results for top companies. Some of our <span class="reviews__heading--highlighted">success stories.</span></h2>
-  
+
         <ul class="reviews__container">
           <li>
             <Review
@@ -101,11 +99,11 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
             />
           </li>
         </ul>
-      </section>  
+      </section>
     </div>
 
     <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} includeContact />
-	</main>
+  </main>
 </Layout>
 
 <style>
@@ -113,6 +111,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     flex: 1;
   }
   .home__intro {
+    background-url: url('../assets/bg-pattern-home-2.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -121,7 +120,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     align-items: center;
     color: var(--white);
     text-align: center;
-		padding: 0 20px 150px;
+    padding: 0 20px 150px;
   }
   .intro__border {
     display: none;
@@ -138,11 +137,11 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     line-height: 1.5625rem;
   }
   .intro__heading, .highlights__heading, .reviews__heading {
-		color: var(--white);
+    color: var(--white);
     font-weight: 700;
   }
   .intro__heading {
-		font-size: 2.5rem;
+    font-size: 2.5rem;
     padding: 0 25px;
     margin: 40px 0;
   }
@@ -268,13 +267,14 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     .home__intro {
       flex-direction: row;
       text-align: left;
-      background-size: 25%;
-      background-position: bottom right 18%;
+      background-image: url('../assets/bg-pattern-home-1.svg'), url('../assets/bg-pattern-home-2.svg');
+      background-size: 200px, 25%;
+      background-position: top 70px left -110px, bottom right 18%;
       padding: 20px 105px 180px;
     }
     .intro__heading {
       font-size: 6.25rem;
-      padding: 0;
+      padding: 0 0 0 40px;
       width: 50%;
     }
     .intro__wrapper {
