@@ -31,22 +31,22 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
 ---
 
 <Layout title="About">
-	<main class="container">
+  <main class="container">
     <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
-    
+
     <div class="about">
       <section class="about__intro" style={`background-image: url(${aboutIntroBgImg.src})`}>
         <h2 class="intro__heading">About</h2>
-  
+
         <div class="intro__wrapper">
           <div class="intro__border"></div>
           <p class="intro__text">We help companies build dynamic teams made up of top global talent. Using our network of passionate professionals we drive innovation and deliver incredible outcomes. Talented, diverse teams shape the best products and experiences. We’ll bring those teams to you.</p>
         </div>
       </section>
-  
+
       <section class="about__directors" style={`background-image: url(${aboutDirectorsTopBgImg.src}), url(${aboutDirectorsBottomBgImg.src})`}>
         <h2 class="directors__heading">Meet the directors</h2>
-  
+
         <ul class="directors__cards">
           <li>
             <Card 
@@ -105,10 +105,10 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
           </li>
         </ul>
       </section>
-  
+
       <section class="about__featured" style={`background-image: url(${aboutFeaturedBgImg.src})`}>
         <h2 class="featured__heading">Some of our clients</h2>
-  
+
         <ul class="featured__logos">
           <li>
             <Image class="featured__logo" src={theVergeLogo} alt="the verge's logo" />
@@ -130,7 +130,7 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     </div>
 
     <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} includeContact />
-	</main>
+  </main>
 </Layout>
 
 <style>
