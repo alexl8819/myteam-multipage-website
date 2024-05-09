@@ -44,68 +44,66 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
         </div>
       </section>
   
-      <section class="about__directors" style={`background-image: url(${aboutDirectorsTopBgImg.src})`}>
-        <div class="directors__wrapper" style={`background-image: url(${aboutDirectorsBottomBgImg.src})`}>
-          <h2 class="directors__heading">Meet the directors</h2>
+      <section class="about__directors" style={`background-image: url(${aboutDirectorsTopBgImg.src}), url(${aboutDirectorsBottomBgImg.src})`}>
+        <h2 class="directors__heading">Meet the directors</h2>
   
-          <ul class="directors__cards">
-            <li>
-              <Card 
-                client:visible
-                name="Nikita Marks"
-                title="Founder & CEO"
-                avatar={nikita}
-                quote="“It always amazes me how much talent there is in every corner of the globe.”"
-              />
-            </li>
-            <li>
-              <Card
-                client:visible
-                name="Cristian Duncan"
-                title="Co-founder & COO"
-                avatar={cristian}
-                quote="“Distributed teams required unique processes. You need to approach work in a new way.”"
-              />
-            </li>
-            <li>
-              <Card
-                client:visible
-                name="Cruz Hamer"
-                title="Co-founder & CTO"
-                avatar={cruz}
-                quote="“Technology is at the forefront of enabling distributed teams. That's where we come in.”"
-              />
-            </li>
-            <li>
-              <Card
-                client:visible
-                name="Drake Heaton"
-                title="Business Development Lead"
-                avatar={drake}
-                quote="“Hiring similar people from similar backgrounds is a surefire way to stunt innovation.”"
-              />
-            </li>
-            <li>
-              <Card
-                client:visible
-                name="Griffin Wise"
-                title="Lead Marketing"
-                avatar={griffin}
-                quote="“Unique perspectives shape unique products, which is what you need to survive these days.”"
-              />
-            </li>
-            <li>
-              <Card
-                client:visible
-                name="Aden Allan"
-                title="Head of Talent"
-                avatar={aden}
-                quote="“Empowered teams create truly amazing products. Set the north star and let them follow it.”"
-                opened
-              />
-            </li>
-          </ul>
-        </div>
+        <ul class="directors__cards">
+          <li>
+            <Card 
+              client:visible
+              name="Nikita Marks"
+              title="Founder & CEO"
+              avatar={nikita}
+              quote="“It always amazes me how much talent there is in every corner of the globe.”"
+            />
+          </li>
+          <li>
+            <Card
+              client:visible
+              name="Cristian Duncan"
+              title="Co-founder & COO"
+              avatar={cristian}
+              quote="“Distributed teams required unique processes. You need to approach work in a new way.”"
+            />
+          </li>
+          <li>
+            <Card
+              client:visible
+              name="Cruz Hamer"
+              title="Co-founder & CTO"
+              avatar={cruz}
+              quote="“Technology is at the forefront of enabling distributed teams. That's where we come in.”"
+            />
+          </li>
+          <li>
+            <Card
+              client:visible
+              name="Drake Heaton"
+              title="Business Development Lead"
+              avatar={drake}
+              quote="“Hiring similar people from similar backgrounds is a surefire way to stunt innovation.”"
+            />
+          </li>
+          <li>
+            <Card
+              client:visible
+              name="Griffin Wise"
+              title="Lead Marketing"
+              avatar={griffin}
+              quote="“Unique perspectives shape unique products, which is what you need to survive these days.”"
+            />
+          </li>
+          <li>
+            <Card
+              client:visible
+              name="Aden Allan"
+              title="Head of Talent"
+              avatar={aden}
+              quote="“Empowered teams create truly amazing products. Set the north star and let them follow it.”"
+              opened
+            />
+          </li>
+        </ul>
       </section>
   
       <section class="about__featured" style={`background-image: url(${aboutFeaturedBgImg.src})`}>
@@ -139,7 +137,7 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
   .about {
     flex: 1;
   }
-  .about__intro, .about__directors, .directors__wrapper, .about__featured {
+  .about__intro, .about__directors, .about__featured {
     background-repeat: no-repeat;
   }
   .about__intro, .about__directors, .about__featured {
@@ -174,22 +172,21 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
   }
   .about__directors {
     background-color: var(--deep-jungle-green);
-    background-position: top -6% left -60%;
+    background-position: top -6% left -60%, bottom right;
+    background-repeat: no-repeat, no-repeat;
+    padding: 50px 25px;
   }
-  .directors__wrapper {
-    background-position: bottom right;
-    padding: 70px 25px;
+  .directors__heading {
+    font-size: 2rem;
+    margin: 40px 0 20px;
   }
-  .directors__heading, .featured__heading {
+  .featured__heading {
     font-size: 2rem;
     margin: 40px 0;
   }
-  .directors__cards {
-    margin-top: 60px;
-  }
   .about__featured {
     background-color: var(--sacramento-state-green);
-    background-position: top -30% left -60%;
+    background-position: top -90px left -110px;
     padding: 50px 0 40px;
   }
   .featured__heading {
@@ -218,13 +215,11 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
       font-size: 4rem;
     }
     .about__directors {
-      background-position: top left -18%;
-      padding: 0 30px;
-    }
-    .directors__wrapper {
-      padding-top: 120px;
+      background-position: top left -18%, bottom right;
+      padding: 80px 30px 60px;
     }
     .directors__cards {
+      margin-top: 60px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 15px;
@@ -237,7 +232,8 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
       justify-content: space-evenly;
     }
     .featured__logo {
-      width: 100px;
+      width: auto;
+      height: 17px;
       margin: 0 20px;
     }
   }
@@ -266,13 +262,10 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
       text-align: left;
     }
     .about__directors {
-      background-position: top left -8%;
+      background-position: top left -8%, bottom right;
     }
     .directors__heading, .featured__heading {
       font-size: 3rem;
-    }
-    .directors__wrapper {
-      background-position: bottom right 50px;
     }
     .directors__cards {
       grid-template-columns: repeat(3, 1fr);

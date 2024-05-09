@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 45px 30px;
+  padding: 45px 18px;
   width: 100%;
 }
 .card__outer {
@@ -86,9 +86,14 @@
 }
 @media screen and (min-width: 768px) {
   .card {
-    width: 350px;
-    height: 253px; 
+    width: 281px;
+    height: 253px;
     padding-bottom: 40px;
     margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card {
+    width: 350px;
   }
 }
