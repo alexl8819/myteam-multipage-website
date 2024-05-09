@@ -9,10 +9,6 @@ import ContactForm from '../components/ContactForm.jsx';
 import iconPerson from '../assets/icon-person.svg';
 import iconCog from '../assets/icon-cog.svg';
 import iconChart from '../assets/icon-chart.svg';
-// Bg
-import bottomBgImg from '../assets/bg-pattern-contact-2.svg';
-
-const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
 
 ---
 
@@ -21,40 +17,38 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
     
     <section class="contact">
-      <div class="contact__wrapper" style={`background-image: url(${contactBottomBg.src})`}>
-        <div class="contact__header">
-          <h2 class="contact__heading">Contact</h2>
+      <div class="contact__header">
+        <h2 class="contact__heading">Contact</h2>
   
-          <h3 class="contact__subheading">Ask us about</h3>
+        <h3 class="contact__subheading">Ask us about</h3>
 
-          <ol class="contact__featured">
-            <li class="featured__item">
-              <div class="item__iconcontainer">
-                <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
-              </div>
+        <ol class="contact__featured">
+          <li class="featured__item">
+            <div class="item__iconcontainer">
+              <Image class="item__icon" src={iconPerson} alt="contact featured person icon" loading="eager" />
+            </div>
   
-              <p class="item__text">The quality of our talent network</p>
-            </li>
-            <li class="featured__item">
-              <div class="item__iconcontainer">
-                <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
-              </div>
+            <p class="item__text">The quality of our talent network</p>
+          </li>
+          <li class="featured__item">
+            <div class="item__iconcontainer">
+              <Image class="item__icon" src={iconCog} alt="contact featured cog icon" loading="eager" />
+            </div>
   
-              <p class="item__text">Usage & implementation of our software</p>
-            </li>
-            <li class="featured__item">
-              <div class="item__iconcontainer">
-                <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
-              </div>
+            <p class="item__text">Usage & implementation of our software</p>
+          </li>
+          <li class="featured__item">
+            <div class="item__iconcontainer">
+              <Image class="item__icon" src={iconChart} alt="contact featured chart icon" loading="eager" />
+            </div>
   
-              <p class="item__text">How we help drive innovation</p>
-            </li>
-          </ol>
-        </div>  
+            <p class="item__text">How we help drive innovation</p>
+          </li>
+        </ol>
+      </div>  
         
-        <div class="contact__formcontainer">
-          <ContactForm client:visible />
-        </div>
+      <div class="contact__formcontainer">
+        <ContactForm client:visible />
       </div>
     </section>
       
@@ -63,22 +57,17 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
 </Layout>
 
 <style>
-  .contact, .contact__wrapper {
-    background-repeat: no-repeat;
-  }
   .contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     color: var(--white);
+    background-image: url('../assets/bg-pattern-contact-2.svg');
+    background-position: bottom -100px right -100px;
+    background-repeat: no-repeat;
+    padding: 40px 25px 60px;
     flex: 1;
-  }
-  .contact__wrapper {
-    display: flex;
-    flex-direction: column;
-    background-position: bottom -13% right -60%;
-    padding: 40px 25px;
   }
   .contact__heading, .contact__subheading {
     font-weight: 700;
@@ -124,12 +113,9 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
   }
   @media screen and (min-width: 768px) {
     .contact {
-      background-image: url('../assets/bg-pattern-about-2-contact-1.svg');
-      background-position: top 3% left -18%;
-      background-repeat: no-repeat;
-    }
-    .contact__wrapper {
-      background-position: bottom right -17%;
+      background-image: url('../assets/bg-pattern-contact-2.svg'), url('../assets/bg-pattern-about-2-contact-1.svg');
+      background-position: bottom right -100px, top 25px left -100px;
+      background-repeat: no-repeat, no-repeat;
       padding: 40px 125px 60px;
     }
     .contact__featured {
@@ -141,13 +127,10 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
   }
   @media screen and (min-width: 1280px) {
     .contact {
-      background-position: top 50px left -100px;
+      background-position: bottom right -100px, top 50px left -100px;
       background-size: 180px;
-      text-align: left;
-    }
-    .contact__wrapper {
-      background-position: bottom right -100px;
       flex-direction: row;
+      text-align: left;
       padding: 40px 100px 60px;
     }
     .contact__header, .contact__formcontainer {
@@ -161,7 +144,7 @@ const contactBottomBg = await getImage({ src: bottomBgImg, format: 'webp' });
     }
   }
   @media screen and (min-width: 1440px) {
-    .contact__wrapper {
+    .contact {
       padding: 40px 150px 60px;
     }
   }
