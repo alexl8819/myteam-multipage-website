@@ -50,7 +50,7 @@
 }
 .socials__icon {
   width: 24px;
-  height: 19.5px;
+  /*height: 19.5px;*/
 }
 .socials__icon:hover {
   cursor: pointer;
