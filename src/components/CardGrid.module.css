@@ -1,0 +1,17 @@
+.card__grid {
+  width: 100%;
+  margin: 25px 0;
+  display: grid;
+}
+@media screen and (min-width: 768px) {
+  .card__grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card__grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+  }
+}

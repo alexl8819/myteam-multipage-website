@@ -4,7 +4,7 @@ import { Image, getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Card from '../components/Card.jsx';
+import CardGrid from '../components/CardGrid.jsx';
 // Backgrounds
 import firstSectionBg from '../assets/bg-pattern-about-1-mobile-nav-1.svg';
 import secondSectionTopBg from '../assets/bg-pattern-about-2-contact-1.svg';
@@ -46,64 +46,49 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
 
       <section class="about__directors" style={`background-image: url(${aboutDirectorsTopBgImg.src}), url(${aboutDirectorsBottomBgImg.src})`}>
         <h2 class="directors__heading">Meet the directors</h2>
-
-        <ul class="directors__cards">
-          <li>
-            <Card 
-              client:visible
-              name="Nikita Marks"
-              title="Founder & CEO"
-              avatar={nikita}
-              quote="“It always amazes me how much talent there is in every corner of the globe.”"
-            />
-          </li>
-          <li>
-            <Card
-              client:visible
-              name="Cristian Duncan"
-              title="Co-founder & COO"
-              avatar={cristian}
-              quote="“Distributed teams required unique processes. You need to approach work in a new way.”"
-            />
-          </li>
-          <li>
-            <Card
-              client:visible
-              name="Cruz Hamer"
-              title="Co-founder & CTO"
-              avatar={cruz}
-              quote="“Technology is at the forefront of enabling distributed teams. That's where we come in.”"
-            />
-          </li>
-          <li>
-            <Card
-              client:visible
-              name="Drake Heaton"
-              title="Business Development Lead"
-              avatar={drake}
-              quote="“Hiring similar people from similar backgrounds is a surefire way to stunt innovation.”"
-            />
-          </li>
-          <li>
-            <Card
-              client:visible
-              name="Griffin Wise"
-              title="Lead Marketing"
-              avatar={griffin}
-              quote="“Unique perspectives shape unique products, which is what you need to survive these days.”"
-            />
-          </li>
-          <li>
-            <Card
-              client:visible
-              name="Aden Allan"
-              title="Head of Talent"
-              avatar={aden}
-              quote="“Empowered teams create truly amazing products. Set the north star and let them follow it.”"
-              opened
-            />
-          </li>
-        </ul>
+        
+        <CardGrid
+          client:only="react"
+          class="directors__cards"
+            items={[
+              {
+                name: 'Nikita Marks',
+                title: 'Founder & CEO',
+                avatar: nikita,
+                quote: '“It always amazes me how much talent there is in every corner of the globe.”',
+              },
+              {
+                name: 'Cristian Duncan',
+                title: 'Co-founder & COO',
+                avatar: cristian,
+                quote: '“Distributed teams required unique processes. You need to approach work in a new way.”'
+              },
+              {
+                name: 'Cruz Hamer',
+                title: 'Co-founder & CTO',
+                avatar: cruz,
+                quote: '“Technology is at the forefront of enabling distributed teams. That\'s where we come in.”'
+              },
+              {
+                name: 'Drake Heaton',
+                title: 'Business Development Lead',
+                avatar: drake,
+                quote: '“Hiring similar people from similar backgrounds is a surefire way to stunt innovation.”'
+              },
+              {
+                name: 'Griffin Wise',
+                title: 'Lead Marketing',
+                avatar: griffin,
+                quote: '“Unique perspectives shape unique products, which is what you need to survive these days.”'
+              },
+              {
+                name: 'Aden Allan',
+                title: 'Head of Talent',
+                avatar: aden,
+                quote: '“Empowered teams create truly amazing products. Set the north star and let them follow it.”'
+              }
+            ]}
+        />
       </section>
 
       <section class="about__featured" style={`background-image: url(${aboutFeaturedBgImg.src})`}>
@@ -176,12 +161,9 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     background-repeat: no-repeat, no-repeat;
     padding: 50px 25px;
   }
-  .directors__cards {
-    margin-bottom: 25px;
-  }
   .directors__heading {
     font-size: 2rem;
-    margin: 40px 0 20px;
+    margin: 40px 0 0;
   }
   .featured__heading {
     font-size: 2rem;
@@ -223,9 +205,9 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     }
     .directors__cards {
       margin-top: 60px;
-      display: grid;
+      /*display: grid;
       grid-template-columns: repeat(2, 1fr);
-      column-gap: 15px;
+      column-gap: 15px;*/
     }
     .about__featured {
       background-position: top -200% left 0%;
@@ -270,10 +252,10 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     .directors__heading, .featured__heading {
       font-size: 3rem;
     }
-    .directors__cards {
+    /*.directors__cards {
       grid-template-columns: repeat(3, 1fr);
       column-gap: 25px;
-    }
+    }*/
     .about__featured {
       background-size: 12%;
       background-position: top left;

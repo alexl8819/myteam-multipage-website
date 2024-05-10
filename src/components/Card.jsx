@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from './Card.module.css';
 
@@ -8,10 +8,14 @@ import iconTwitter from '../assets/icon-twitter.svg';
 import iconLinkedin from '../assets/icon-linkedin.svg';
 
 export default function Card ({ name, title, avatar, quote, opened=false }) {
-  const [isOpened, setIsOpened] = useState(opened);
+  const [isOpened, setIsOpened] = useState(false);
 	const onChange = (e) => setIsOpened(e.target.checked);
   
-	return (
+  useEffect(() => {
+    setIsOpened(opened);
+  }, [opened]);
+
+  return (
     <div className={styles.card}>
 	    <div className={styles.cardInner}>
 		  { !isOpened && <img className={styles.cardAvatar} src={avatar.src} alt="featured director" loading="lazy" /> }
