@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint:js": "eslint ./src/**/**.astro --max-warnings=0",
-    "lint:css": "stylelint ./src/**/**.astro"
+    "lint:css": "stylelint ./src/**/**.{astro,css}"
   },
   "dependencies": {
     "@astrojs/react": "^3.3.1",
