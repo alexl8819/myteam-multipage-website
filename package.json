@@ -8,7 +8,8 @@
     "build": "astro build --base myteam-multipage-website/",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:js": "eslint ./src/**/**.astro --max-warnings=0"
+    "lint:js": "eslint ./src/**/**.astro --max-warnings=0",
+    "lint:css": "stylelint ./src/**/**.astro"
   },
   "dependencies": {
     "@astrojs/react": "^3.3.1",
