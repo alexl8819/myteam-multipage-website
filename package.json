@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@fontsource/livvic": "^5.0.19",
+    "@testing-library/react": "^15.0.7",
     "eslint": "^9.1.1",
     "eslint-plugin-astro": "^0.34.0",
     "modern-normalize": "^2.0.0",
@@ -30,6 +31,7 @@
     "stylelint": "^16.5.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^36.0.0",
-    "stylelint-selector-bem-pattern": "^4.0.0"
+    "stylelint-selector-bem-pattern": "^4.0.0",
+    "vitest": "^1.6.0"
   }
 }
