@@ -28,13 +28,13 @@ export default function Card ({ name, title, avatar, quote, opened=false }) {
             <img className={styles.socialsIcon} src={iconLinkedin.src} alt={`${name}'s linkedin icon`} loading="lazy" />
           </div>
       }
-    </div>
-    <div className={styles.cardOuter}>
-      <input className={styles.cardCheckbox} type="checkbox" name="cc" onChange={onChange} checked={isOpened} />
-      <div className={styles.cardExpansion}>
-        <img className={styles.expansionIcon} src={isOpened ? iconClose.src : iconCross.src } alt="open/close icon" loading="lazy" />
+      </div>
+      <div className={styles.cardOuter}>
+        <input className={styles.cardCheckbox} type="checkbox" name="cc" onChange={onChange} checked={isOpened} />
+        <div className={styles.cardExpansion}>
+          <img className={styles.expansionIcon} src={isOpened ? iconClose.src : iconCross.src } alt="open/close icon" loading="lazy" />
+        </div>
       </div>
     </div>
-  </div>
   );
 }
