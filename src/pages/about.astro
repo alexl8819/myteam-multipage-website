@@ -190,7 +190,7 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     width: 87px;
     height: 40px;
   }
-  @media screen and (min-width: 768px) {
+  @media (--md-viewport) {
     .about__intro {
       background-position: bottom -8% right -18%;
       padding: 10px 180px 110px;
@@ -218,7 +218,7 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
       margin: 0 20px;
     }
   }
-  @media screen and (min-width: 1280px) {
+  @media (--xl-viewport) {
     .about__intro {
       flex-direction: row;
       background-position: bottom right -100px;

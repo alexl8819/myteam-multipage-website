@@ -131,7 +131,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   .sidebar__nav .nav__list > .nav__link:last-child {
     margin: 55px 0;
   }
-  @media screen and (min-width: 768px) {
+  @media (--md-viewport) {
     .header {
       padding: 60px 40px;
     }
@@ -155,12 +155,12 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
       display: none;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media (--lg-viewport) {
     .header {
       padding: 60px 150px;
     }
   }
-  @media screen and (min-width: 1280px) {
+  @media (--xl-viewport) {
     .header__logo {
       width: 160px;
       height: 40px;

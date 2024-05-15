@@ -218,7 +218,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
   .reviews__heading--highlighted {
     color: var(--rapture-blue);
   }
-  @media screen and (min-width: 768px) {
+  @media (--md-viewport) {
     .home__intro {
       background-size: 45%;
       padding: 0 170px 250px;
@@ -265,7 +265,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
       padding: 0 65px;
     }
   }
-  @media screen and (min-width: 1280px) {
+  @media (--xl-viewport) {
     .home__intro {
       flex-direction: row;
       text-align: left;

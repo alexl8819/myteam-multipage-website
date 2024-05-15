@@ -3,7 +3,7 @@
   margin: 25px 0;
   display: grid;
 }
-@media screen and (min-width: 768px) {
+@media (--md-viewport) {
   .card__grid {
     padding: 0 90px;
     grid-template-columns: repeat(2, 1fr);
@@ -11,18 +11,18 @@
     justify-items: center;
   }
 }
-@media screen and (min-width: 1024px) {
+@media (--lg-viewport) {
   .card__grid {
     padding: 0 225px;
   }
 }
-@media screen and (min-width: 1280px) {
+@media (--xl-viewport) {
   .card__grid {
     grid-template-columns: repeat(3, 1fr);
     padding: 0 130px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media (--2xl-viewport) {
   .card__grid {
     padding: 0 170px;
   }
