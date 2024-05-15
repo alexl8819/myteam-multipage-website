@@ -7,6 +7,7 @@ export default getViteConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    css: true
+    css: true,
+    setupFiles: './setupTest.js'
   },
 });
