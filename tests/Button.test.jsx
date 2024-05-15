@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { Button, LinkButton } from './Button';
+import { Button, LinkButton } from '../src/components/Button';
 
 describe('Button tests', () => {
   test('Should render a button', () => {
