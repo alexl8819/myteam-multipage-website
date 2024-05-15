@@ -12,9 +12,17 @@ describe('Button tests', () => {
     render(<Button isDisabled>Test2</Button>);
     expect(screen.getByText('Test2')).toBeDisabled();
   });
-});
 
-describe('LinkButton tests', () => {
+  test('Should render a primary button in dark mode', () => {
+    render(<Button isDark>Dark Button</Button>);
+    expect(screen.getByText('Dark Button')).toHaveClass(/_button__primary--dark/, /_button/);
+  });
+
+  test('Should render a secondary button', () => {
+    render(<Button isPrimary={false}>Secondary</Button>);
+    expect(screen.getByText('Secondary')).toHaveClass(/_button__secondary/, /_button/);
+  });
+
   test('Should render a link styled as a button', () => {
     render(<LinkButton url="/">Test3</LinkButton>);
     expect(screen.getByText('Test3')).toHaveAttribute('href');
