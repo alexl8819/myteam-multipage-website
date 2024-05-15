@@ -1,0 +1,5 @@
+/* Responsive media */
+@custom-media --md-viewport screen and (min-width: 48rem);
+@custom-media --lg-viewport screen and (min-width: 64rem);
+@custom-media --xl-viewport screen and (min-width: 80rem);
+@custom-media --2xl-viewport screen and (min-width: 90rem);
