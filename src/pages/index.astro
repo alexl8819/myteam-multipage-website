@@ -110,6 +110,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
   .home {
     flex: 1;
   }
+  
   .home__intro {
     background-image: url('../assets/bg-pattern-home-2.svg');
     background-size: contain;
@@ -122,47 +123,58 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     text-align: center;
     padding: 0 20px 150px;
   }
+  
   .intro__border {
     display: none;
   }
+  
   .intro__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
   }
+  
   .intro__text {
     font-size: 0.9375rem; /* 15px */
     font-weight: 600;
     line-height: 1.5625rem;
   }
+  
   .intro__heading, .highlights__heading, .reviews__heading {
     color: var(--white);
     font-weight: 700;
   }
+  
   .intro__heading {
     font-size: 2.5rem;
     padding: 0 25px;
     margin: 40px 0;
   }
+  
   .highlights__wrapper {
     padding: 65px 110px 40px 30px;
   }
+  
   .highlights__border {
     width: 50px;
     height: 4px;
     background-color: var(--light-coral);
   }
+  
   .highlights__heading, .reviews__heading {
     font-size: 2rem;
   }
+  
   .highlights__heading {
     margin: 40px 0 0;
     text-align: left;
   }
+  
   .intro__heading--highlighted {
     color: var(--light-coral);
   }
+  
   .home__highlights {
     background-color: var(--sacramento-state-green);
     background-size: 50%;
@@ -172,6 +184,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     flex-direction: column;
     padding-bottom: 60px;
   }
+  
   .highlights__highlight {
     display: flex;
     flex-direction: column;
@@ -180,26 +193,32 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     text-align: center;
     padding: 0 25px;
   }
+  
   .highlights__highlight:not(:first-child), .highlights__highlight:not(:last-child) {
     margin: 40px 0;
   }
+  
   .highlight__icon {
     margin-bottom: 10px;
   }
+  
   .highlight__heading {
     font-size: 1.125rem;
     color: var(--light-coral);
     margin-bottom: 20px;
   }
+  
   .highlight__heading--bolded {
     font-weight: 700;
   }
+  
   .highlight__text {
     font-size: 0.9375rem;
     font-weight: 600;
     line-height: 25px;
     color: var(--white);
   }
+  
   .home__reviews {
     background-color: var(--deep-jungle-green);
     background-position: top left, bottom right;
@@ -207,37 +226,46 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     padding: 125px 0 110px;
     margin: -26px 0;
   }
+  
   .reviews__container {
     display: flex;
     flex-direction: column;
   }
+  
   .reviews__heading {
     padding: 0 30px;
     text-align: center;
   }
+  
   .reviews__heading--highlighted {
     color: var(--rapture-blue);
   }
+  
   @media (--md-viewport) {
     .home__intro {
       background-size: 45%;
       padding: 0 170px 250px;
     }
+    
     .intro__heading {
       font-size: 4rem;
       padding: 0 40px;
     }
+    
     .home__highlights {
       background-size: 25%;
       background-position: top right -18%;
       padding-bottom: 75px;
     }
+    
     .highlights__wrapper {
       padding: 120px 200px 20px 80px;
     }
+    
     .highlights__container {
       padding: 0 70px;
     }
+    
     .highlights__highlight { 
       display: flex;
       flex-direction: row;
@@ -245,26 +273,33 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
       text-align: left;
       padding: 5px 75px 5px 0;
     }
+    
     .highlights__highlight:first-child {
       padding-left: 5px;
     }
+    
     .highlight__container {
       padding: 0 25px;
     }
+    
     .highlight__heading {
       margin-bottom: 20px;
     }
+    
     .highlight__icon {
       margin-bottom: 0;
     }
+    
     .home__reviews {
       background-position: top left, bottom 2.5% right;
       padding: 120px 75px 80px;
     }
+    
     .reviews__heading {
       padding: 0 65px;
     }
   }
+  
   @media (--xl-viewport) {
     .home__intro {
       flex-direction: row;
@@ -274,59 +309,72 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
       background-position: top 80px left -110px, bottom right 18%;
       padding: 20px 105px 180px;
     }
+    
     .intro__heading {
       font-size: 6.25rem;
       padding: 0 0 0 40px;
       width: 50%;
     }
+    
     .intro__wrapper {
       width: 50%;
       height: 200px;
       padding: 0 85px;
     }
+    
     .intro__border {
       display: block;
       width: 50px;
       height: 4px;
       background-color: var(--rapture-blue);
     }
+    
     .intro__text {
       font-size: 1.125rem;
     }
+    
     .home__highlights {
       flex-direction: row;
       padding: 120px 20px;
       background-size: 15%;
       background-position: bottom right -13%;
     }
+    
     .highlights__wrapper {
       width: 50%;
       padding: 40px 120px;
     }
+    
     .highlights__border {
       margin-bottom: 60px;
     }
+    
     .highlights__container {
       padding-top: 65px;
       padding-right: 135px;
       width: 50%;
     }
+    
     .highlights__heading, .reviews__heading {
       font-size: 3rem;
     }
+    
     .highlights__highlight {
       margin: 10px 0;
       padding: 0;
     }
+    
     .home__reviews {
       background-size: 12%;
       background-position: top left -5%, bottom 3% right -3%;
       padding: 110px 125px;
     }
+    
     .reviews__container {
       margin-top: 20px;
       flex-direction: row;
     }
+    
     .reviews__heading {
       padding: 0 120px;
     }

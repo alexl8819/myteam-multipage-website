@@ -121,10 +121,9 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
   .about {
     flex: 1;
   }
+  
   .about__intro, .about__directors, .about__featured {
     background-repeat: no-repeat;
-  }
-  .about__intro, .about__directors, .about__featured {
     color: var(--white);
     text-align: center;
     display: flex;
@@ -132,106 +131,127 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
     justify-content: center;
     align-items: center;
   }
+  
   .about__intro {
     background-position: bottom -50% right -58%;
     padding: 10px 30px 110px;
   }
+  
   .intro__heading {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 40px 0;
   }
+  
   .intro__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+  
   .intro__border {
     display: none;
   }
+  
   .intro__text {
     font-size: 0.938rem;
     font-weight: 600;
     line-height: 25px;
   }
+  
   .about__directors {
     background-color: var(--deep-jungle-green);
     background-position: top -6% left -60%, bottom right;
     background-repeat: no-repeat, no-repeat;
     padding: 50px 25px;
   }
+  
   .directors__heading {
     font-size: 2rem;
     margin: 40px 0 0;
   }
+  
   .featured__heading {
     font-size: 2rem;
+    font-weight: 700;
     margin: 40px 0;
   }
+  
   .about__featured {
     background-color: var(--sacramento-state-green);
     background-position: top -90px left -110px;
     padding: 50px 0 40px;
   }
-  .featured__heading {
-    font-weight: 700;
-    margin: 40px 0;
-  }
+  
   .featured__logos {
     display: flex;
     flex-direction: column;
   }
+  
   .featured__logo {
     width: auto;
     height: 24px;
     margin: 20px 0;
   }
+  
   li:last-child > .featured__logo {
     width: 87px;
     height: 40px;
   }
+  
   @media (--md-viewport) {
     .about__intro {
       background-position: bottom -8% right -18%;
       padding: 10px 180px 110px;
     }
+    
     .intro__heading {
       font-size: 4rem;
     }
+    
     .about__directors {
       background-position: top left -18%, bottom right;
       padding: 80px 0 60px;
     }
+    
     .directors__heading {
       margin-bottom: 40px;
     }
+    
     .about__featured {
       background-position: top -200% left 0%;
     }
+    
     .featured__logos {
       flex-direction: row;
       justify-content: space-evenly;
     }
+    
     .featured__logo {
       width: auto;
       height: 17px;
       margin: 0 20px;
     }
   }
+  
   @media (--xl-viewport) {
     .about__intro {
       flex-direction: row;
       background-position: bottom right -100px;
     }
+    
     .intro__heading, .intro__wrapper {
       width: 50%;
     }
+    
     .intro__wrapper {
       padding: 40px 40px 0;
     }
+    
     .intro__heading {
       font-size: 4rem;
     }
+    
     .intro__border {
       display: block;
       width: 50px;
@@ -239,23 +259,29 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
       background-color: var(--light-coral);
       margin-bottom: 40px;
     }
+    
     .intro__text {
       text-align: left;
     }
+    
     .about__directors {
       background-position: top left -8%, bottom right;
     }
+    
     .directors__heading, .featured__heading {
       font-size: 3rem;
     }
+    
     .about__featured {
       background-size: 12%;
       background-position: top left;
       padding: 50px 0 90px;
     }
+    
     .featured__logos {
       margin-top: 20px;
     }
+    
     .featured__logo {
       width: auto;
       margin: 0 40px;

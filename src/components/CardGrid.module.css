@@ -3,6 +3,7 @@
   margin: 25px 0;
   display: grid;
 }
+
 @media (--md-viewport) {
   .card__grid {
     padding: 0 90px;
@@ -11,17 +12,20 @@
     justify-items: center;
   }
 }
+
 @media (--lg-viewport) {
   .card__grid {
     padding: 0 225px;
   }
 }
+
 @media (--xl-viewport) {
   .card__grid {
     grid-template-columns: repeat(3, 1fr);
     padding: 0 130px;
   }
 }
+
 @media (--2xl-viewport) {
   .card__grid {
     padding: 0 170px;

@@ -46,25 +46,29 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     padding: 40px 35px;
     z-index: 0;
   }
+  
   .header__logo {
     width: 128px;
     height: 32px;
   }
+  
   .header__nav {
     display: none;
   }
+  
   .navtarget__icon, .navtarget__toggle {
     width: 20px;
   }
+  
   .header__navtarget {
     z-index: 1;
   }
+  
   .navtarget__icon {
     height: 17px;
   }
+  
   .navtarget__toggle {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     height: 25px;
     cursor: pointer;
@@ -73,6 +77,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     top: 42px;
     right: 35px;
   }
+  
   .navtarget__sidebar {
     display: none;
     background-repeat: no-repeat;
@@ -81,9 +86,11 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     overflow-x: hidden;
     z-index: 2;
   }
+  
   .navtarget__toggle:checked {
     position: fixed;
   }
+  
   .navtarget__toggle:checked + .navtarget__sidebar {
     display: flex;
     flex-direction: column;
@@ -95,6 +102,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     background-color: var(--police-blue);
     z-index: 2;
   }
+  
   .sidebar__icon {
     display: flex;
     flex-direction: row;
@@ -102,8 +110,9 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     margin-right: 10px;
     margin-top: 20px;
   }
+  
   .navtarget__toggle:checked ~ .sidebar__opacity {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0 0 0 / 60%);
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -111,55 +120,69 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     left: 0;
     z-index: 1;
   }
+  
   .nav__list {
     list-style-type: none;
   }
+  
   .sidebar__nav {
     padding: 25px 20px;
   }
+  
   .nav__link {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--white);
   }
+  
   .nav__link:hover {
     color: var(--light-coral);
   }
+  
   .sidebar__nav .nav__list > .nav__link {
     margin: 35px 0;
   }
+  
   .sidebar__nav .nav__list > .nav__link:last-child {
     margin: 55px 0;
   }
+  
   @media (--md-viewport) {
     .header {
       padding: 60px 40px;
     }
+    
     .header__nav {
       display: block;
       margin-left: 20px;
       width: 100%;
     }
+    
     .nav__list {
       display: flex;
       flex-direction: row;
       align-items: center;
     }
+    
     .nav__link {
       margin: 0 25px;
     }
+    
     .nav__list > .nav__link:last-child {
       margin-left: auto;
     }
+    
     .header__navtarget {
       display: none;
     }
   }
+  
   @media (--lg-viewport) {
     .header {
       padding: 60px 150px;
     }
   }
+  
   @media (--xl-viewport) {
     .header__logo {
       width: 160px;

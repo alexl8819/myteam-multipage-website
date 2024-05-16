@@ -66,6 +66,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
   .footer {
     width: 100%;
   }
+
   .footer__contact {
     display: flex;
     flex-direction: column;
@@ -79,6 +80,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     padding: 46px 60px 86px;
     color: var(--sacramento-state-green);
   }
+  
   .footer__bottom {
     background-color: var(--dark-green);
     display: flex;
@@ -91,14 +93,17 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     font-weight: 600;
     padding: 40px 25px 20px;
   }
+  
   .contact__heading {
     font-size: 2rem;
     margin: 40px 0;
   }
+  
   .bottom__logo {
     width: 96px;
     height: 24px;
   }
+  
   .bottom__left, .bottom__content {
     width: 100%;
     display: flex;
@@ -106,20 +111,24 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     justify-content: center;
     align-items: center;
   }
+  
   .bottom__address {
     text-align: center;
     font-weight: 600;
     line-height: 25px;
     margin-bottom: 5px;
   }
+  
   .bottom__nav {
     margin: 25px 0;
   }
+  
   .bottom__socials {
     display: flex;
     align-items: center;
     margin: 25px 0;
   }
+  
   .nav__list, .bottom__socials {
     list-style-type: none;
     padding: 0;
@@ -128,62 +137,77 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     justify-content: space-between;
     width: 104px;
   }
+  
   .socials__icon:hover {
     cursor: pointer;
     filter: brightness(0) saturate(100%) invert(75%) sepia(91%) saturate(2704%) hue-rotate(309deg) brightness(100%) contrast(94%); 
   }
+  
   .nav__link:hover {
     color: var(--light-coral);
   }
+  
   @media (--md-viewport) {
     .footer__bottom {
       padding: 30px 70px;
     }
+    
     .footer__contact {
       background-size: 225px;
       flex-direction: row;
       justify-content: space-between;
       padding: 60px 110px;
     }
+    
     .bottom__left, .bottom__content {
       flex-direction: row;
       justify-content: space-between;
     }
+    
     .bottom__address, .bottom__copyright {
       text-align: right;
     }
   }
+  
   @media (--xl-viewport) {
     .footer__bottom {
       padding: 30px 120px;
       flex-direction: row;
     }
+    
     .footer__contact {
       padding: 60px 250px;
       background-size: 250px;
       background-position: bottom -10% left;
     }
+    
     .contact__heading {
       font-size: 3rem;
     }
+    
     .nav__link:first-child {
       margin-right: 40px;
     }
+    
     .bottom__left, .bottom__content {
       padding: 10px 0;
       justify-content: space-around;
     }
+    
     .bottom__address {
       text-align: left;
     }
+    
     .bottom__content {
       flex-direction: column;
       align-items: end;
       padding-right: 60px;
     }
+    
     .bottom__socials {
       margin: 0 0 45px;
     }
+    
     .bottom__logo {
       width: 160px;
       height: 40px;
