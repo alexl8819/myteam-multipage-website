@@ -9,7 +9,7 @@
     "build": "astro build --base myteam-multipage-website/",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:js": "eslint ./src/**/**.{astro,jsx} --max-warnings=0",
+    "lint:js": "eslint ./src/**/**.{jsx,astro} --max-warnings=0",
     "lint:css": "stylelint ./src/**/**.{astro,css}",
     "test": "vitest"
   },
@@ -20,6 +20,7 @@
     "@types/react-dom": "^18.3.0",
     "astro": "^4.6.3",
     "classnames": "^2.5.1",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -30,8 +31,10 @@
     "@testing-library/react": "^15.0.7",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
-    "eslint": "^9.1.1",
+    "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.34.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
     "jsdom": "^24.0.0",
     "modern-normalize": "^2.0.0",
     "postcss-csso": "^6.0.1",
