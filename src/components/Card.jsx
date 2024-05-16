@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Card.module.css';
 
@@ -7,7 +8,7 @@ import iconCross from '../assets/icon-cross.svg';
 import iconTwitter from '../assets/icon-twitter.svg';
 import iconLinkedin from '../assets/icon-linkedin.svg';
 
-export default function Card ({ name, title, avatar, quote, opened=false }) {
+function Card ({ name, title, avatar, quote, opened=false }) {
   const [isOpened, setIsOpened] = useState(false);
   const onChange = (e) => setIsOpened(e.target.checked);
 
@@ -38,3 +39,13 @@ export default function Card ({ name, title, avatar, quote, opened=false }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  avatar: PropTypes.object.isRequired,
+  quote: PropTypes.string.isRequired,
+  opened: PropTypes.bool
+};
+
+export default Card;

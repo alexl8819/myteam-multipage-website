@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   useWindowWidth
 } from '@react-hook/window-size';
@@ -6,7 +7,7 @@ import styles from './CardGrid.module.css';
 
 import Card from './Card';
 
-export default function CardGrid ({ items }) {
+function CardGrid ({ items }) {
   const windowWidth = useWindowWidth();
 
   return (
@@ -26,3 +27,9 @@ export default function CardGrid ({ items }) {
     </div>
   );
 }
+
+CardGrid.propTypes = {
+  items: PropTypes.array.isRequired
+};
+
+export default CardGrid;
