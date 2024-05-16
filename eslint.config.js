@@ -4,6 +4,9 @@ import reactJSX from 'eslint-plugin-react/configs/jsx-runtime.js';
 
 export default [
   {
+    ignores: ['**/*.test.jsx']
+  },
+  {
     files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     ...reactRecommended,
     languageOptions: {

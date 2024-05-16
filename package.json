@@ -9,7 +9,7 @@
     "build": "astro build --base myteam-multipage-website/",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:js": "eslint ./src/**/**.{jsx,astro} --max-warnings=0",
+    "lint:js": "eslint 'src/**/**.{jsx,astro}' --max-warnings=0",
     "lint:css": "stylelint ./src/**/**.{astro,css}",
     "test": "vitest"
   },
