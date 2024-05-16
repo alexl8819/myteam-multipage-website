@@ -26,7 +26,7 @@ Button.propTypes = {
   customStyle: PropTypes.object,
   isDark: PropTypes.bool,
   isPrimary: PropTypes.bool,
-  isDisabled: PropTyoes.bool
+  isDisabled: PropTypes.bool
 };
 
 function LinkButton ({ children, url, customStyle = {}, isDark = false, isPrimary = true, isDisabled = false}) {
