@@ -8,6 +8,6 @@ export default getViteConfig({
     globals: true,
     environment: 'jsdom',
     css: true,
-    setupFiles: './setupTest.js'
+    setupFiles: './src/setupTest.js'
   },
 });
