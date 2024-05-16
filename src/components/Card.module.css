@@ -74,7 +74,6 @@
   height: 56px;
   margin-top: -65px;
   background-color: var(--light-coral);
-  z-index: 0;
 }
 
 .card__checkbox:checked + .card__expansion,

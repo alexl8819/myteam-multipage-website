@@ -27,12 +27,12 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   <div class="sidebar__opacity"></div>
 </div>
 <style>
-  .navtarget__icon, .navtarget__toggle {
-    width: 20px;
-  }
-  
   .navtarget {
     z-index: 1;
+  }
+
+  .navtarget__icon, .navtarget__toggle {
+    width: 20px;
   }
   
   .navtarget__icon {
@@ -43,7 +43,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     appearance: none;
     height: 25px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 13;
     position: absolute;
     top: 42px;
     right: 35px;
@@ -55,7 +55,6 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     background-position: bottom right -100px;
     padding: 25px;
     overflow-x: hidden;
-    z-index: 2;
   }
   
   .navtarget__toggle:checked {
@@ -126,10 +125,12 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
 </style>
 <script>
   // Resets toggled state
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', reset);
+
+  function reset () {
     const sidebar = document.querySelector('.navtarget__toggle');
     if (window.innerWidth >= 768 && sidebar && sidebar.checked) {
       sidebar.checked = false;
     }
-  });
+  }
 </script>
