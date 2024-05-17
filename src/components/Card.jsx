@@ -19,7 +19,7 @@ function Card ({ name, title, avatar, quote, opened=false }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardInner}>
-      { !isOpened && <img className={styles.cardAvatar} src={avatar.src} alt="featured director" loading="lazy" /> }
+      { !isOpened && <img className={styles.cardAvatar} src={avatar} alt="featured director" loading="lazy" /> }
       <p className={styles.cardName}>{name}</p>
       { !isOpened && <p className={styles.cardTitle}>{title}</p> }
       { isOpened && <p className={styles.cardText}>{quote}</p> }
@@ -43,7 +43,7 @@ function Card ({ name, title, avatar, quote, opened=false }) {
 Card.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  avatar: PropTypes.object.isRequired,
+  avatar: PropTypes.string.isRequired,
   quote: PropTypes.string.isRequired,
   opened: PropTypes.bool
 };
