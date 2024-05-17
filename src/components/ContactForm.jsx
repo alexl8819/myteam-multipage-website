@@ -57,7 +57,7 @@ export default function ContactForm () {
       </div>
       <div className={styles.formGroup}>
         <label className={styles.groupLabel} htmlFor="message">Message</label>
-        <textarea className={classNameTextArea(message)} placeholder="Message" onInput={updateField(setMessage)}></textarea>
+        <textarea className={classNameTextArea(message)} placeholder="Message" id="message" name="message" onInput={updateField(setMessage)}></textarea>
         <p className={styles.groupErrorfield}>This field is required</p>
       </div>
 
