@@ -8,7 +8,7 @@
   .card__grid {
     padding: 0 90px;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 0px;
+    column-gap: 0;
     justify-items: center;
   }
 }
