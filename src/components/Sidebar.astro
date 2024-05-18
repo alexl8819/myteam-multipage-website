@@ -20,7 +20,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
     <Image class="sidebar__icon" src={closeIcon} alt="mobile nav icon" loading="lazy" />
     <nav class="sidebar__nav">
       <ol class="nav__list">
-        {links.map(({url, label}) => (url === 'contact' ? (<li class="nav__link"><LinkButton url={`${baseURL}${url}`} customStyle={{ padding: '10px 15px' }}>{label}</LinkButton></li>) : (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)))}
+        {links.map(({url, label}) => (url === 'contact' ? (<li class="nav__link"><LinkButton url={`${baseURL}${url}`} customStyle={{ padding: '10px 30px' }}>{label}</LinkButton></li>) : (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)))}
       </ol>
     </nav>
   </aside>
