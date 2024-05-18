@@ -86,9 +86,19 @@ const baseURL = import.meta.env.BASE_URL;
   }
   
   @media (--xl-viewport) {
+    .header {
+      padding: 60px 125px;
+    }
+    
     .header__logo {
       width: 160px;
       height: 40px;
+    }
+  }
+
+  @media (--2xl-viewport) {
+    .header {
+      padding: 60px 150px;
     }
   }
 </style>

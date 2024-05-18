@@ -242,18 +242,22 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
   
   @media (--md-viewport) {
     .home__intro {
-      background-size: 45%;
-      padding: 0 170px 250px;
+      background-size: 358px;
+      padding: 0 115px 225px;
     }
     
     .intro__heading {
       font-size: 4rem;
       padding: 0 40px;
     }
+
+    .intro__text {
+      padding: 0 40px;
+    }
     
     .home__highlights {
-      background-size: 25%;
-      background-position: top right -18%;
+      background-size: 200px;
+      background-position: top right -100px;
       padding-bottom: 75px;
     }
     
@@ -290,7 +294,7 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     }
     
     .home__reviews {
-      background-position: top left, bottom 2.5% right;
+      background-position: top left, bottom 25px right;
       padding: 120px 75px 80px;
     }
     
@@ -304,14 +308,14 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
       flex-direction: row;
       text-align: left;
       background-image: url('../assets/bg-pattern-home-1.svg'), url('../assets/bg-pattern-home-2.svg');
-      background-size: 200px, 25%;
-      background-position: top 80px left -110px, bottom right 18%;
-      padding: 20px 105px 180px;
+      background-size: 200px, 358px;
+      background-position: top 80px left -110px, bottom right 130px;
+      padding: 20px 15px 180px;
     }
     
     .intro__heading {
       font-size: 6.25rem;
-      padding: 0 0 0 40px;
+      padding-left: 40px;
       width: 50%;
     }
     
@@ -330,13 +334,14 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     
     .intro__text {
       font-size: 1.125rem;
+      padding: 0 30px 0 0;
     }
     
     .home__highlights {
       flex-direction: row;
       padding: 120px 20px;
-      background-size: 15%;
-      background-position: bottom right -13%;
+      background-size: 200px;
+      background-position: bottom 30px right -115px;
     }
     
     .highlights__wrapper {
@@ -364,8 +369,8 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     }
     
     .home__reviews {
-      background-size: 12%;
-      background-position: top left -5%, bottom 3% right -3%;
+      background-size: 147px, 200px;
+      background-position: top left -10px, bottom 25px right -10px;
       padding: 110px 125px;
     }
     
@@ -376,6 +381,12 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
     
     .reviews__heading {
       padding: 0 120px;
+    }
+  }
+
+  @media (--2xl-viewport) {
+    .intro__heading {
+      padding-left: 70px;
     }
   }
 </style>

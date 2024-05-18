@@ -153,19 +153,46 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     }
     
     .footer__contact {
-      background-size: 225px;
+      background-size: 200px;
       flex-direction: row;
       justify-content: space-between;
-      padding: 60px 110px;
+      padding: 80px 110px;
     }
-    
+
+    .contact__heading {
+      margin: 0;
+    }
+
     .bottom__left, .bottom__content {
       flex-direction: row;
       justify-content: space-between;
     }
+
+    .bottom__left {
+      height: 159px;
+      padding: 15px 0;
+    }
+
+    .bottom__header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .bottom__nav {
+      margin: 0;
+    }
     
     .bottom__address, .bottom__copyright {
       text-align: right;
+    }
+
+    .bottom__address {
+      display: flex;
+      flex-direction: column;
+      align-self: start;
     }
   }
   
@@ -177,7 +204,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     
     .footer__contact {
       padding: 60px 250px;
-      background-size: 250px;
+      background-size: 200px;
       background-position: bottom -10% left;
     }
     
@@ -185,6 +212,14 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       font-size: 3rem;
     }
     
+    .bottom__nav {
+      padding: 20px 0;
+    }
+
+    .nav__list {
+      width: auto;
+    }
+
     .nav__link:first-child {
       margin-right: 40px;
     }
@@ -195,6 +230,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     }
     
     .bottom__address {
+      align-self: center;
       text-align: left;
     }
     
