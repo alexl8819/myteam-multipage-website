@@ -17,7 +17,6 @@ describe('CardGrid mobile screen tests', () => {
       value: 375,
       configurable: true
     });
-    console.log(document.documentElement.clientWidth);
   });
   test('Should render four cards with the last one opened on mobile screens', () => {
     render(<CardGrid items={items} />);
