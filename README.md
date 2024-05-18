@@ -10,9 +10,8 @@ This is a solution to the [myteam website challenge on Frontend Mentor](https://
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+  - [Useful Resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -30,12 +29,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Mobile Screenshot - Homepage](./screenshots/mobile-home.png)
+![Mobile Screenshot - About](./screenshots/mobile-about.png)
+![Mobile Screenshot - Contact](./screenshots/mobile-contact.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [myteam-multipage-website](https://alexl8819.github.io/myteam-multipage-website/)
 
 ## My process
 
@@ -49,44 +50,14 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS Library
 - [Astro](https://astro.build/) - Web Framework
 
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Accessibility, linting and testing are currently the key goals for a robust solution.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Using multiple backgrounds](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds) - This particular resource was useful in implementing various images on each page.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@alexl8819](https://www.frontendmentor.io/profile/alexl8819)
