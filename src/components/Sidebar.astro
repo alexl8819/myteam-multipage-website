@@ -15,6 +15,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
 ---
 <div class="navtarget">
   <Image class="navtarget__icon" src={hamburgerIcon} alt="mobile nav icon" loading="eager" /> 
+  <label class="navtarget__label sr-only" for="toggle">sidebar toggle</label>
   <input class="navtarget__toggle" type="checkbox" name="toggle" />
   <aside class="navtarget__sidebar" style={`background-image: url(${sidebarBottomBg.src})`}>
     <Image class="sidebar__icon" src={closeIcon} alt="mobile nav icon" loading="lazy" />
@@ -37,6 +38,11 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   
   .navtarget__icon {
     height: 17px;
+  }
+
+  .navtarget__label {
+    width: 0;
+    height: 0;
   }
   
   .navtarget__toggle {
