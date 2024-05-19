@@ -25,7 +25,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       <LinkButton isDark url={`${baseURL}contact`} customStyle={{ width: '153px', padding: '12px 0' }}>contact us</LinkButton>
     </section> : null
   }
-  <section class="footer__bottom">
+  <div class="footer__bottom">
     <div class="bottom__left">
       <div class="bottom__header">
         <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" loading="lazy" />
@@ -60,7 +60,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
 
       <p class="bottom__copyright">Copyright 2020. All Rights Reserved.</p>
     </div>
-  </section>
+  </div>
 </footer>
 <style>
   .footer {
