@@ -6,7 +6,7 @@ const csso = require('postcss-csso');
 module.exports = {
   plugins: [
     postcssGlobalData({
-      files: ['./src/styles/custom.css'],
+      files: ['./src/styles/custom-media-queries.css'],
     }),
     postcssPresetEnv({
       stage: 2,
