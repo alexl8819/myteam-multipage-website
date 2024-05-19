@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import { LinkButton } from './Button';
 
 import logo from '../assets/logo.svg';
-import Sidebar from './Sidebar.astro';
+import Navbar from './Navbar.astro';
 
 const { links } = Astro.props;
 const baseURL = import.meta.env.BASE_URL;
@@ -13,13 +13,7 @@ const baseURL = import.meta.env.BASE_URL;
 <header class="header">
   <Image class="header__logo" src={logo} alt="main site logo" loading="eager" />
 
-  <nav class="header__nav">
-    <ol class="nav__list">
-      {links.map(({url, label}) => (url === 'contact' ? (<li class="nav__link"><LinkButton url={`${baseURL}${url}`}>{label}</LinkButton></li>) : (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)))}
-    </ol>
-  </nav>
-
-  <Sidebar links={links} />
+  <Navbar links={links} />
 </header>
 <style>
   .header {
@@ -35,47 +29,9 @@ const baseURL = import.meta.env.BASE_URL;
     height: 32px;
   }
   
-  .header__nav {
-    display: none;
-  }
-  
-  .nav__list {
-    list-style-type: none;
-  }
-  
-  .nav__link {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--white);
-  }
-  
-  .nav__link:hover {
-    color: var(--light-coral);
-  }
-  
   @media (--md-viewport) {
     .header {
       padding: 60px 40px;
-    }
-    
-    .header__nav {
-      display: block;
-      margin-left: 20px;
-      width: 100%;
-    }
-    
-    .nav__list {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    
-    .nav__link {
-      margin: 0 25px;
-    }
-    
-    .nav__list > .nav__link:last-child {
-      margin-left: auto;
     }
   }
   

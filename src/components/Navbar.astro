@@ -1,23 +1,20 @@
 ---
-import { Image, getImage } from 'astro:assets';
+import { Image } from 'astro:assets';
 
 import { LinkButton } from './Button';
 
 import hamburgerIcon from '../assets/icon-hamburger.svg';
 import closeIcon from '../assets/icon-close.svg';
 
-import sidebarBgImg from '../assets/bg-pattern-about-1-mobile-nav-1.svg';
-
 const { links } = Astro.props;
 const baseURL = import.meta.env.BASE_URL;
-const sidebarBottomBg = await getImage({ src: sidebarBgImg });
 
 ---
 <div class="navtarget">
   <Image class="navtarget__icon" src={hamburgerIcon} alt="mobile nav icon" loading="eager" /> 
   <label class="navtarget__label sr-only" for="sidebar-toggle">sidebar toggle</label>
   <input class="navtarget__toggle" type="checkbox" name="sidebar-toggle" id="sidebar-toggle" />
-  <aside class="navtarget__sidebar" style={`background-image: url(${sidebarBottomBg.src})`}>
+  <aside class="navtarget__sidebar">
     <Image class="sidebar__icon" src={closeIcon} alt="mobile nav icon" loading="lazy" />
     <nav class="sidebar__nav">
       <ol class="nav__list">
@@ -57,6 +54,7 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   
   .navtarget__sidebar {
     display: none;
+    background: url('../assets/bg-pattern-about-1-mobile-nav-1.svg');
     background-repeat: no-repeat;
     background-position: bottom right -100px;
     padding: 25px;
@@ -125,7 +123,39 @@ const sidebarBottomBg = await getImage({ src: sidebarBgImg });
   
   @media (--md-viewport) {    
     .navtarget {
+      width: 100%;
+    }
+
+    .navtarget__icon, .navtarget__label, .navtarget__toggle, .sidebar__icon, .sidebar__opacity {
       display: none;
+    }
+
+    .navtarget__sidebar {
+      display: block;
+      padding: 0 25px;
+      background: none;
+      width: 100%;
+    }
+
+    .sidebar__nav {
+      display: block;
+      padding: 0;
+      margin-left: 20px;
+      width: 100%;
+    }
+
+    .nav__list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .sidebar__nav .nav__list > .nav__link {
+      margin: 0 25px;
+    }
+
+    .sidebar__nav .nav__list > .nav__link:last-child {
+      margin-left: auto;
     }
   }
 </style>
