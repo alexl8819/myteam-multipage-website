@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [myteam-multipage-website](https://www.frontendmentor.io/solutions/myteam-multipage-website-KH1DhRuif_)
 - Live Site URL: [myteam-multipage-website](https://alexl8819.github.io/myteam-multipage-website/)
 
 ## My process
@@ -52,7 +52,7 @@ Users should be able to:
 
 ### Continued development
 
-Accessibility, linting and testing are currently the key goals for a robust solution.
+Accessibility, linting and testing are currently the key goals for a robust solution. Attention to detail is also important which will be my next focus after I've created a baseline for my current goals.
 
 ### Useful resources
 
