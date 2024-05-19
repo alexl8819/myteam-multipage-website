@@ -12,6 +12,8 @@ function Card ({ name, title, avatar, quote, opened=false }) {
   const [isOpened, setIsOpened] = useState(false);
   const onChange = (e) => setIsOpened(e.target.checked);
 
+  const toggleId = name.split(' ')[0].toLowerCase();
+
   useEffect(() => {
     setIsOpened(opened);
   }, [opened]);
@@ -19,7 +21,7 @@ function Card ({ name, title, avatar, quote, opened=false }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardInner}>
-      { !isOpened && <img className={styles.cardAvatar} src={avatar} alt={name} loading="lazy" /> }
+      { !isOpened && <img className={styles.cardAvatar} src={avatar} alt={`avatar for ${name}`} loading="lazy" /> }
       <p className={styles.cardName}>{name}</p>
       { !isOpened && <p className={styles.cardTitle}>{title}</p> }
       { isOpened && <p className={styles.cardText}>{quote}</p> }
@@ -31,8 +33,8 @@ function Card ({ name, title, avatar, quote, opened=false }) {
       }
       </div>
       <div className={styles.cardOuter}>
-        <label className="sr-only" htmlFor="card-toggle">card toggle</label>
-        <input className={styles.cardCheckbox} type="checkbox" name="card-toggle" id="card-toggle" onChange={onChange} checked={isOpened} />
+        <label className="sr-only" htmlFor={`${toggleId}-card-toggle`}>card toggle</label>
+        <input className={styles.cardCheckbox} type="checkbox" name={`${toggleId}-card-toggle`} id={`${toggleId}-card-toggle`} onChange={onChange} checked={isOpened} />
         <div className={styles.cardExpansion}>
           <img className={styles.expansionIcon} src={isOpened ? iconClose.src : iconCross.src } alt={`open/close icon for ${name}`} loading="lazy" />
         </div>
