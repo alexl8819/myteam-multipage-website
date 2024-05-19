@@ -22,7 +22,7 @@ function Card ({ name, title, avatar, quote, opened=false }) {
     <div className={styles.card}>
       <div className={styles.cardInner}>
       { !isOpened && <img className={styles.cardAvatar} src={avatar} alt={`avatar for ${name}`} loading="lazy" /> }
-      <p className={styles.cardName}>{name}</p>
+      <h3 className={styles.cardName}>{name}</h3>
       { !isOpened && <p className={styles.cardTitle}>{title}</p> }
       { isOpened && <p className={styles.cardText}>{quote}</p> }
       { isOpened && 
