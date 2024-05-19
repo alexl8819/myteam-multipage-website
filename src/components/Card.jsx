@@ -31,7 +31,7 @@ function Card ({ name, title, avatar, quote, opened=false }) {
       }
       </div>
       <div className={styles.cardOuter}>
-        <label className="sr-only" for="card-toggle">card toggle</label>
+        <label className="sr-only" htmlFor="card-toggle">card toggle</label>
         <input className={styles.cardCheckbox} type="checkbox" name="card-toggle" id="card-toggle" onChange={onChange} checked={isOpened} />
         <div className={styles.cardExpansion}>
           <img className={styles.expansionIcon} src={isOpened ? iconClose.src : iconCross.src } alt={`open/close icon for ${name}`} loading="lazy" />
