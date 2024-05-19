@@ -30,7 +30,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       <div class="bottom__header">
         <Image class="bottom__logo" src={siteLogo} alt="main site footer logo" loading="lazy" />
 
-        <nav class="bottom__nav">
+        <nav class="bottom__nav" aria-label="partial">
           <ol class="nav__list">
             {links.map(({url, label}) => <li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)}
           </ol>
@@ -226,18 +226,23 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     
     .bottom__nav {
       padding: 20px 0;
+      width: 100%;
     }
 
     .nav__list {
+      justify-content: left;
       width: auto;
     }
 
     .nav__link:first-child {
-      margin-right: 40px;
+      margin-right: 35px;
+    }
+
+    .bottom__left {
+      padding: 25px 0;
     }
     
     .bottom__left, .bottom__content {
-      padding: 10px 0;
       justify-content: space-around;
     }
     
@@ -249,7 +254,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
     .bottom__content {
       flex-direction: column;
       align-items: end;
-      padding-right: 60px;
+      padding: 10px 60px 10px 0;
     }
     
     .bottom__socials {
