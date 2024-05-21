@@ -8,11 +8,6 @@ describe('Button tests', () => {
     expect(screen.getByText('Test')).toBeEnabled();
   });
 
-  test('Should render a disabled button', () => {
-    render(<Button isDisabled>Test2</Button>);
-    expect(screen.getByText('Test2')).toBeDisabled();
-  });
-
   test('Should render a primary button in dark mode', () => {
     render(<Button isDark>Dark Button</Button>);
     expect(screen.getByText('Dark Button')).toHaveClass(/_button__primary--dark/, /_button/);

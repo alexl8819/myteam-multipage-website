@@ -5,16 +5,15 @@ import styles from './Button.module.css';
 
 const cx = classnames.bind(styles);
 
-function Button ({ children, type = 'button', customStyle = {}, isDark = false, isPrimary = true, isDisabled = false }) {
+function Button ({ children, type = 'button', customStyle = {}, isDark = false, isPrimary = true }) {
   const className = cx({
     button: true,
     buttonPrimaryLight: isPrimary && !isDark,
     buttonPrimaryDark: isPrimary && isDark,
     buttonSecondary: !isPrimary,
-    buttonDisabled: isDisabled
   });
   
-  return (<button type={type} style={customStyle} className={className} disabled={isDisabled}>{children}</button>);
+  return (<button type={type} style={customStyle} className={className}>{children}</button>);
 }
 
 Button.propTypes = {
@@ -26,19 +25,17 @@ Button.propTypes = {
   customStyle: PropTypes.object,
   isDark: PropTypes.bool,
   isPrimary: PropTypes.bool,
-  isDisabled: PropTypes.bool
 };
 
-function LinkButton ({ children, url, customStyle = {}, isDark = false, isPrimary = true, isDisabled = false}) {
+function LinkButton ({ children, url, customStyle = {}, isDark = false, isPrimary = true}) {
   const className = cx({
     button: true,
     buttonPrimaryLight: isPrimary && !isDark,
     buttonPrimaryDark: isPrimary && isDark,
     buttonSecondary: !isPrimary,
-    buttonDisabled: isDisabled
   });
 
-  return (<a href={url} style={customStyle} className={className} disabled={isDisabled}>{children}</a>)
+  return (<a href={url} style={customStyle} className={className}>{children}</a>)
 }
 
 LinkButton.propTypes = {
@@ -50,7 +47,6 @@ LinkButton.propTypes = {
   customStyle: PropTypes.object,
   isDark: PropTypes.bool,
   isPrimary: PropTypes.bool,
-  isDisabled: PropTypes.bool
 };
 
 export {

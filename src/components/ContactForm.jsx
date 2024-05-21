@@ -30,11 +30,6 @@ export default function ContactForm () {
     groupTextareaError: typeof field === 'string' && !field.length
   });
 
-  const canSubmit = useMemo(
-    () => (typeof name === 'string' && name.length) && (typeof email === 'string' && isValidEmail()) && (typeof message === 'string' && message.length), 
-    [name, email, message]
-  );
-
   return (
     <form className={styles.contactForm} name="contact" onSubmit={onSubmit} noValidate>
       <div className={styles.formGroup}>
@@ -61,7 +56,7 @@ export default function ContactForm () {
         <p className={styles.groupErrorfield}>This field is required</p>
       </div>
 
-      <Button isPrimary={false} customStyle={{ display: 'flex', alignSelf: 'flex-start', padding: '15px 30px', margin: '5px 0' }} type="submit" isDisabled={!canSubmit}>submit</Button>
+      <Button isPrimary={false} customStyle={{ display: 'flex', alignSelf: 'flex-start', padding: '15px 30px', margin: '5px 0' }} type="submit">submit</Button>
     </form>
   );
 }

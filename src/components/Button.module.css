@@ -8,12 +8,6 @@
   cursor: pointer;
 }
 
-.button--disabled {
-  pointer-events: none;
-  cursor: none;
-  opacity: 0.1;
-}
-
 .button__primary--light {
   border: 2px solid var(--white);
   color: var(--white);
@@ -23,10 +17,6 @@
 .button__primary--light:hover {
   background-color: var(--white);
   color: var(--dark-green);
-}
-
-.button__primary--light:disabled {
-  background-color: transparent;
 }
 
 .button__primary--dark {
@@ -39,10 +29,6 @@
   border: 2px solid transparent;
   background-color: var(--sacramento-state-green);
   color: var(--white);
-}
-
-.button__primary--dark:disabled {
-  background-color: transparent;
 }
 
 .button__secondary {
