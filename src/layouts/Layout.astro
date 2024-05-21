@@ -41,6 +41,11 @@ const { title } = Astro.props;
     font-family: Livvic, sans-serif;
     background-color: var(--midnight-green);
   }
+
+  body {
+    max-width: 90rem;
+    min-height: 100vh;
+  }
   
   a {
     color: inherit;
@@ -59,8 +64,6 @@ const { title } = Astro.props;
   .container {
     display: flex;
     flex-direction: column;
-    min-width: 20rem;
-    min-height: 100vh;
     z-index: auto;
     position: relative;
   }
