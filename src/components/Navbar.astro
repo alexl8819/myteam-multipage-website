@@ -14,14 +14,14 @@ const baseURL = import.meta.env.BASE_URL;
   <Image class="navtarget__icon" src={hamburgerIcon} alt="mobile nav icon" loading="eager" /> 
   <label class="navtarget__label sr-only" for="sidebar-toggle">sidebar toggle</label>
   <input class="navtarget__toggle" type="checkbox" name="sidebar-toggle" id="sidebar-toggle" />
-  <aside class="navtarget__sidebar">
+  <div class="navtarget__sidebar">
     <Image class="sidebar__icon" src={closeIcon} alt="mobile nav icon" loading="lazy" />
     <nav class="sidebar__nav" aria-label="main">
       <ol class="nav__list">
         {links.map(({url, label}) => (url === 'contact' ? (<li class="nav__link"><LinkButton url={`${baseURL}${url}`} customStyle={{ padding: '10px 23px' }}>{label}</LinkButton></li>) : (<li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)))}
       </ol>
     </nav>
-  </aside>
+  </div>
   <div class="sidebar__opacity"></div>
 </div>
 <style>
