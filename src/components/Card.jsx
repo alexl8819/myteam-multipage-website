@@ -13,6 +13,7 @@ function Card ({ name, title, avatar, quote, opened=false }) {
   const onChange = (e) => setIsOpened(e.target.checked);
 
   const toggleId = name.split(' ')[0].toLowerCase();
+  const fullName = name.split(' ').join('');
 
   useEffect(() => {
     setIsOpened(opened);
@@ -27,8 +28,8 @@ function Card ({ name, title, avatar, quote, opened=false }) {
       { isOpened && <p className={styles.cardText}>{quote}</p> }
       { isOpened && 
           <div className={styles.cardSocials}>
-            <img className={styles.socialsIcon} src={iconTwitter.src} alt={`${name}'s twitter icon`} loading="lazy" />
-            <img className={styles.socialsIcon} src={iconLinkedin.src} alt={`${name}'s linkedin icon`} loading="lazy" />
+            <a href={`https://x.com/${fullName}`}><img className={styles.socialsIcon} src={iconTwitter.src} alt={`${name}'s twitter`} loading="lazy" /></a>
+            <a href={`https://linkedin.com/${fullName}`}><img className={styles.socialsIcon} src={iconLinkedin.src} alt={`${name}'s linkedin`} loading="lazy" /></a>
           </div>
       }
       </div>
