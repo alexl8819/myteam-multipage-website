@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types';
-import {
-  useWindowWidth
-} from '@react-hook/window-size';
 
 import styles from './CardGrid.module.css';
 
 import Card from './Card';
 
 function CardGrid ({ items }) {
-  const windowWidth = useWindowWidth();
-
   return (
     <div className={styles.cardGrid}>
       { 
@@ -20,7 +15,6 @@ function CardGrid ({ items }) {
             title={item.title}
             avatar={item.avatar}
             quote={item.quote}
-            opened={ (index === items.length - 2) && (windowWidth >= 768 && windowWidth < 1440) || (index === items.length - 1) && (windowWidth < 768 || windowWidth >= 1440) }
           />
         ))
       }
