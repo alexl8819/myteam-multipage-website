@@ -13,9 +13,8 @@ import iconChart from '../assets/icon-chart.svg';
 ---
 
 <Layout title="Contact">
+  <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
   <main class="container">
-    <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
-
     <div class="contact">
       <section class="contact__header">
         <h1 class="contact__heading">Contact</h1>
@@ -51,9 +50,8 @@ import iconChart from '../assets/icon-chart.svg';
         <ContactForm client:visible />
       </section>
     </div>
-
-    <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} />
   </main>
+  <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} />
 </Layout>
 
 <style>

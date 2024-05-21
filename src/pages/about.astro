@@ -32,9 +32,8 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
 ---
 
 <Layout title="About">
+  <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
   <main class="container">
-    <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
-
     <div class="about">
       <section class="about__intro" style={`background-image: url(${aboutIntroBgImg.src})`}>
         <h1 class="intro__heading">About</h1>
@@ -113,9 +112,8 @@ const aboutFeaturedBgImg = await getImage({ src: thirdSectionBg, format: 'webp' 
         </ul>
       </section>
     </div>
-
-    <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} includeContact />
   </main>
+  <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} includeContact />
 </Layout>
 
 <style>

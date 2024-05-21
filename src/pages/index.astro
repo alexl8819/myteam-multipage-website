@@ -21,9 +21,8 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
 ---
 
 <Layout title="Homepage">
+  <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
   <main class="container">
-    <Header links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}, {label: 'contact us', url: 'contact'}]} />
-
     <div class="home">
       <section class="home__intro">
         <h1 class="sr-only">Home</h1>
@@ -103,9 +102,8 @@ const reviewsBottomBgImg = await getImage({ src: thirdSectionBottomBgImg, format
         </ul>
       </section>
     </div>
-
-    <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} includeContact />
   </main>
+  <Footer links={[{label: 'home', url: ''}, {label: 'about', url: 'about'}]} includeContact />
 </Layout>
 
 <style>
