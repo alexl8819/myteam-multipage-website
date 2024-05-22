@@ -27,7 +27,7 @@ Button.propTypes = {
   isPrimary: PropTypes.bool,
 };
 
-function LinkButton ({ children, url, customStyle = {}, isDark = false, isPrimary = true}) {
+function LinkButton ({ children, url, customStyle = {}, isDark = false, isPrimary = true }) {
   const className = cx({
     button: true,
     buttonPrimaryLight: isPrimary && !isDark,
@@ -52,4 +52,4 @@ LinkButton.propTypes = {
 export {
   Button,
   LinkButton
-}
+};
