@@ -34,21 +34,21 @@ export default function ContactForm () {
     <form className={styles.contactForm} name="contact" onSubmit={onSubmit} noValidate>
       <div className={styles.formGroup}>
         <label className={styles.groupLabel} htmlFor="fullname">Name</label>
-        <input className={classNameTextFor(name)} type="text" id="fullname" name="fullname" placeholder="Name" onInput={updateField(setName)} />
+        <input className={classNameTextFor(name)} type="text" id="fullname" name="fullname" placeholder="Name" autocomplete="name honorific-prefix given-name additional-name family-name honorific-suffix" onInput={updateField(setName)} />
         <p className={styles.groupErrorfield}>This field is required</p>
       </div>
       <div className={styles.formGroup}>
         <label className={styles.groupLabel} htmlFor="emailaddress">Email Address</label>
-        <input className={classNameTextFor(email, true)} type="email" id="emailaddress" name="emailaddress" placeholder="Email Address" onInput={updateField(setEmail)} />
+        <input className={classNameTextFor(email, true)} type="email" id="emailaddress" name="emailaddress" placeholder="Email Address" autocomplete="email" onInput={updateField(setEmail)} />
         <p className={styles.groupErrorfield}>{ typeof email === 'string' && !email.length ? 'This field is required' : (!isValidEmail() ? 'This is not a valid email' : '')}</p>
       </div>
       <div className={styles.formGroup}>
         <label className={styles.groupLabel} htmlFor="companyname">Company Name</label>
-        <input className={styles.groupTextinput} type="text" id="companyname" name="companyname" placeholder="Company Name" />
+        <input className={styles.groupTextinput} type="text" id="companyname" name="companyname" placeholder="Company Name" autocomplete="organization company" />
       </div>
       <div className={styles.formGroup}>
         <label className={styles.groupLabel} htmlFor="title">Title</label>
-        <input className={styles.groupTextinput} type="text" id="title" name="title" placeholder="Title" />
+        <input className={styles.groupTextinput} type="text" id="title" name="title" placeholder="Title" autocomplete="title" />
       </div>
       <div className={styles.formGroup}>
         <label className={styles.groupLabel} htmlFor="message">Message</label>
