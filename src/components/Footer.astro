@@ -30,7 +30,7 @@ const contactUsBgImg = await getImage({ src: contactUsBgSvg, format: 'webp' });
       <div class="bottom__header">
         <a href={baseURL}><Image class="bottom__logo" src={siteLogo} alt="myteam - Homepage" loading="lazy" /></a>
 
-        <nav class="bottom__nav" aria-label="partial">
+        <nav class="bottom__nav" aria-label="footer">
           <ol class="nav__list">
             {links.map(({url, label}) => <li class="nav__link"><a href={`${baseURL}${url}`}>{label}</a></li>)}
           </ol>
