@@ -1,31 +1,35 @@
 ---
 import { Image } from 'astro:assets';
 
-import iconQuotes from '../assets/icon-quotes.svg';
-
 const { author, title, avatar, text } = Astro.props;
 
 const images = import.meta.glob('../assets/avatar-*.jpg');
 const avatarSrc = images[`../assets/avatar-${avatar}.jpg`]();
+
 ---
 
-<blockquote class="review">
-  <Image class="review__icon" src={iconQuotes} alt="" />
-  <p class="review__text">“{text}”</p>
-  <footer class="review__footer">
+<article class="review">
+  <blockquote class="review__body">
+    <p class="review__text">“{text}”</p>
+  </blockquote>
+  <div class="review__footer">
     <h3 class="review__author">{author}</h3>
     <p class="review__title">{title}</p>
     <Image class="review__avatar" src={avatarSrc} alt={`${author}s avatar`} />
-  </footer>
-</blockquote>
+  </div>
+</article>
 <style>
   .review {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: url('../assets/icon-quotes.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
     color: var(--white);
     margin: 25px;
+    padding-top: 55px;
   }
   
   .review__text {
